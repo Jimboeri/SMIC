@@ -1,0 +1,6 @@
+
+Error BASE/1098  Argument error: VAL
+Called from PRCEXTR(174)  
+Called from SHRMENU(21)  
+Called from TWIN(188)  
+Called from SMIC(88)  

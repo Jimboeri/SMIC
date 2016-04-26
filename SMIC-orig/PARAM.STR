@@ -1,0 +1,119 @@
+
+ 28/05/94                      E.T.'s UTILITIES                      page 1
+ 
+                             STRUCTURE OF PARAM.DBF
+ 
+                                 Parameter file
+ 
+Name         Type    Len  Dec    Description
+ 
+SCR_TITLE      C      60                                       
+PRNT_TITLE     C      60                                       
+OVRDRFT_LM     N      10   2                                   
+INTEREST       N       6   2                                   
+LENDING        N       6   2                                   
+LST_PRICE      D       8                                       
+LST_ORDER      D       8                                       
+LST_RLEADS     D       8                                       
+LST_UNALL      D       8                                       
+LST_F_UPDT     D       8                                       
+LST_MEDST      D       8                                       
+LST_RECCK      D       8                                       
+LST_BEAR       D       8                                       
+LST_REINS      D       8                                       
+RUN_DIV        C       1                                       
+RUN_NPLAB      C       1                                       
+DNL_DIR        C      20                                       
+NET_DNLDIR     C      20                                       
+NXT_STD_NO     N       5   0                                   
+NXT_GRP_NO     N       5   0                                   
+LST_BANK       D       8                                       
+NXT_CUT_DT     D       8         Next debit order cut off date 
+NXT_DO_DT      D       8         Next debit order date         
+STOP_TRANS     C       1                                       
+START_COMM     D       8                                       
+END_COMM       D       8                                       
+NXT_LRS        N       5   0                                   
+CO_NAME        C      30                                       
+P_ADDR1        C      25                                       
+P_ADDR2        C      25                                       
+P_ADDR3        C      25                                       
+P_CODE         C       4                                       
+ST_ADDR1       C      25                                       
+ST_ADDR2       C      25                                       
+ST_ADDR3       C      25                                       
+ST_P_CODE      C       4                                       
+PHONE_NO       C      15                                       
+FAX_NO         C      15                                       
+TWIN_CONT      C      10                                       
+DO_CO_CODE     C       4         Standard bank company code    
+DO_CO_NAME     C      40         Company name for debit orders 
+DO_USR_REF     C      13         User reference for DO's       
+LST_STD        C      50                                       
+PRINTER        C      30         Name of current printer       
+VERSION        C       5                                       
+MESSAGE        M      10                                       
+CLOSE_DT       C       8         Expiry date of system         
+LST_INT        D       8         Date of last interest run     
+LST_PORTPR     D       8         Date of last PORTPRNT run     
+ 
+28/05/94                      E.T.'s UTILITIES                      page 2
+ 
+                             STRUCTURE OF PARAM.DBF
+ 
+                                 Parameter file
+ 
+Name         Type    Len  Dec    Description
+ 
+GAME_DIR       C      30         Subdirectory of the SM game   
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   ---   28/05/94   ---

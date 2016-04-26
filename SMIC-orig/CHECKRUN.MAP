@@ -1,0 +1,60 @@
+06/08/00                        ET's program                        page 1
+ 
+                           STRUCTURE MAP FOR CHECKRUN
+ 
+CHECKRUN    
+ ÃÄÄÄBEARDLV                                                        
+ ÃÄÄÄDIVIDEND                                                       
+ ³    ÀÄÄÄIND_PROG                                                  
+ ÃÄÄÄFILECOPY                                                       
+ ÃÄÄÄFUTAUTO                                                        
+ ÃÄÄÄFUTEXP                                                         
+ ÃÄÄÄFUTMARG                                                        
+ ÃÄÄÄGM_UPD                                                         
+ ÃÄÄÄHED_UPD                                                        
+ ³    ÃÄÄÄNEW_SECTOR                                                
+ ³    ³    ÀÄÄÄSTR_COM                                              
+ ³    ÃÄÄÄSHR_DATE                                                  
+ ³    ÀÄÄÄSTR_COM                                                   
+ ÃÄÄÄINTEREST                                                       
+ ÃÄÄÄLDUNALL                                                        
+ ÃÄÄÄPRCEXTR                                                        
+ ³    ÀÄÄÄIND_PROG                                                  
+ ÃÄÄÄRECCHECK                                                       
+ ÃÄÄÄSTDREIN2                                                       
+ ³    ÀÄÄÄREIN_STD                                                  
+ ÃÄÄÄTRNNPLAB                                                                                    
+ ÃÄÄÄTRNORDER                                                       
+ ÀÄÄÄUPGRADE                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   ---   06/08/00   ---

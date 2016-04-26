@@ -1,0 +1,92 @@
+*******************************************************************************
+* LDAREALB - PRINTS LABELS FOR WEEKLY FOCUS RUNS
+* JIM WEST
+*******************************************************************************
+
+DRAW_BOX(4,2,20,76)
+@5,10 SAY 'PRINTING LABELS FOR FOCUS.'
+
+@10,10 SAY 'Load labels into printer and line them up'
+INKEY(0)
+
+PRNTOK = .F.
+SET PRINT ON
+SET CONSOL OFF
+DO WHILE .NOT. PRNTOK
+  ? 'XXXXXXXXXXXXXXXXXXXXXXXXX            XXXXXXXXXXXXXXXXXXXXXXXXX'
+  ? 'XXXXXXXXXXXXXXXXXXXXXXXXX            XXXXXXXXXXXXXXXXXXXXXXXXX'
+  ? 'XXXXXXXXXXXXXXXXXXXXXXXXX            XXXXXXXXXXXXXXXXXXXXXXXXX'
+  ? 'XXXXXXXXXXXXXXXXXXXXXXXXX            XXXXXXXXXXXXXXXXXXXXXXXXX'
+  ? 'XXXX                                 XXXX'
+  ? ' '
+  ? ' '
+  ? ' '
+  ? ' '
+  ?? ' '
+  IF MAKE_SURE(16,,'Are the labels correctly lined up? ')
+    PRNTOK = .T.
+  ENDIF
+ENDDO
+
+DO WHILE .NOT. EOF()
+  STORE SPACE(5) TO MCD1
+  STORE SPACE(4) TO MTITLE1, MP_CODE1
+  STORE SPACE(30) TO MSUR1, MADD11, MADD21
+  STORE SPACE(20) TO MNAME1
+  STORE SPACE(25) TO MADD31
+  STORE SPACE(15) TO MPH_W1, MPH_H1
+  STORE SPACE(5) TO MCD2
+  STORE SPACE(4) TO MTITLE2, MP_CODE2
+  STORE SPACE(30) TO MSUR2, MADD12, MADD22
+  STORE SPACE(20) TO MNAME2
+  STORE SPACE(25) TO MADD32
+  STORE SPACE(15) TO MPH_W2, MPH_H2
+  MCNT = 1
+*  DO WHILE MCNT < 3 .AND. .NOT. EOF()
+  DO WHILE MCNT < 2 .AND. .NOT. EOF()
+    IF STATUS = 'N' .AND. GROUP_NO = '01'
+      MM = 'MCD' + LTRIM(STR(MCNT))
+      STORE STD_CODE TO &MM
+      MM = 'MTITLE' + LTRIM(STR(MCNT))
+      STORE TITLE TO &MM
+      MM = 'MNAME' + LTRIM(STR(MCNT))
+      STORE NAME TO &MM
+      MM = 'MP_CODE' + LTRIM(STR(MCNT))
+      STORE P_CODE TO &MM
+      MM = 'MSUR' + LTRIM(STR(MCNT))
+      STORE SURNAME TO &MM
+      MM = 'MADD1' + LTRIM(STR(MCNT))
+      STORE ADDRESS1 TO &MM
+      MM = 'MADD2' + LTRIM(STR(MCNT))
+      STORE ADDRESS2 TO &MM
+      MM = 'MADD3' + LTRIM(STR(MCNT))
+      STORE ADDRESS3 TO &MM
+      MCNT++
+    ENDIF
+    SKIP
+  ENDDO
+  IF MCD1 <> SPACE(5)
+    ? SPACE(18) + 'SMC/STD' + MCD1
+    IF MCD2 <> SPACE(5)
+      ?? SPACE(28) + 'SMC/STD' + MCD2
+    ENDIF
+    ? TRIM(MTITLE1) + ' ' + SUBSTR(MNAME1,1,1) + ' ' + MSUR1
+    MCOL = 40 - PCOL()
+    ?? REPLICATE(' ',MCOL) + TRIM(MTITLE2) + ' ' + SUBSTR(MNAME2,1,1) + ' ' + MSUR2
+    ? MADD11 + SPACE(15) + MADD12
+    ? MADD21 + SPACE(15) + MADD22
+    ? MP_CODE1 + ' ' + MADD31 + SPACE(10) + MP_CODE2 + ' ' + MADD32
+    ? ' '
+    ? ' '
+    ? ' '
+    ? ' '
+  ENDIF (CD <> SPACE)
+ENDDO
+
+SET PRINT OFF
+SET CONSOL ON
+RETURN
+
+*EOF
+
+

@@ -1,0 +1,3148 @@
+27/04/00                        ET's program                        page 1
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  A10_VAL_PM  
+        Source in             ACCCHANG.PRG
+        Called from    ACCCHANG    
+       
+       
+       
+      Program/procedure name  A11_VAL_PM  
+        Source in             ACCCHANG.PRG
+        Called from    ACCCHANG    
+       
+       
+       
+      Program/procedure name  A12_PAY_HI  
+        Source in             ACCCHANG.PRG
+        Called from    ACCCHANG    
+                       ACCDISP     
+       
+       
+       
+      Program/procedure name  A1_PMT_TYP  
+        Source in             ACCDISP1.PRG
+        Called from    A9_LOAD_AR  
+                       P8_ARR_UDF  
+       
+       
+       
+      Program/procedure name  A2_PMT_DT   
+        Source in             ACCDISP1.PRG
+        Called from    P8_ARR_UDF  
+       
+       
+       
+      Program/procedure name  A3_AMOUNT   
+        Source in             ACCDISP1.PRG
+        Called from    A9_LOAD_AR  
+       
+       
+       
+      Program/procedure name  A4_COMMENT  
+        Source in             ACCDISP1.PRG
+        Called from    A9_LOAD_AR  
+                       P8_ARR_UDF  
+       
+       
+       
+27/04/00                        ET's program                        page 2
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  A6_D_RECNO  
+        Source in             ACCCHANG.PRG
+        Called from    ACCCHANG    
+       
+       
+       
+      Program/procedure name  A7_C_RECNO  
+        Source in             ACCDISP1.PRG
+        Called from    A9_LOAD_AR  
+                       ACCCHANG    
+                       P8_ARR_UDF  
+       
+       
+       
+      Program/procedure name  A8_ARR_UDF  
+        Source in             ACCDISP.PRG 
+        Called from    ACCDISP     
+                       ACCDISP1    
+       
+       
+       
+      Program/procedure name  A9_LOAD_AR  
+        Source in             ACCCHANG.PRG
+        Called from    ACCCHANG    
+                       ACCDISP     
+                       ACCDISP1    
+        Uses           A1_PMT_TYP  
+                       A3_AMOUNT   
+                       A4_COMMENT  
+                       A7_C_RECNO  
+       
+       
+       
+      Program/procedure name  ACCBANK     
+        Source in             ACCBANK.PRG 
+        Called from    ACCMENU     
+       
+       
+       
+      Program/procedure name  ACCCHANG    
+        Source in             ACCCHANG.PRG
+        Called from    ACCSUBMN    
+        Uses           A10_VAL_PM  
+                       A11_VAL_PM  
+                       A12_PAY_HI  
+                       A6_D_RECNO  
+                       A7_C_RECNO  
+                       A9_LOAD_AR  
+                       GET_CHEQUE  
+                       GET_CREDIT  
+                       P8_ARR_UDF  
+       
+27/04/00                        ET's program                        page 3
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  ACCCHANG    
+       
+       
+      Program/procedure name  ACCCOMM     
+        Source in             ACCCOMM.PRG 
+        Called from    ACCMENU     
+       
+       
+       
+      Program/procedure name  ACCDEBIT    
+        Source in             ACCDEBIT.PRG
+        Called from    ACCSUBMN    
+        Uses           DOS_WRITE   
+       
+       
+       
+      Program/procedure name  ACCDEBPR    
+        Source in             ACCDEBPR.PRG
+        Called from    ACCSUBMN    
+       
+       
+       
+      Program/procedure name  ACCDEPOS    
+        Source in             ACCDEPOS.PRG
+        Called from    ACCSUBMN    
+       
+       
+       
+      Program/procedure name  ACCDISP     
+        Description :                                       
+        Source in             ACCDISP.PRG 
+        Called from    ACCMENU     
+                       ENQMENU     
+        Uses           A12_PAY_HI  
+                       A8_ARR_UDF  
+                       A9_LOAD_AR  
+       
+        This program is used to see how and when a student is paying. The    
+        column of the left is how he agreed to pay and the column onthe right
+        is any payments we have received.                                    
+        Payment types                                                        
+          C - Credit card                                                    
+          Q - cheQue                                                         
+          D - Debit order                                                    
+          O - Other (cash)                                                   
+       
+       
+27/04/00                        ET's program                        page 4
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  ACCDISP1    
+        Source in             ACCDISP1.PRG
+        Called from    STDMENU2    
+        Uses           A8_ARR_UDF  
+                       A9_LOAD_AR  
+       
+       
+       
+      Program/procedure name  ACCJIM      
+        Source in             ACCJIM.PRG  
+       
+       
+       
+      Program/procedure name  ACCMENU     
+        Source in             ACCMENU.PRG 
+        Called from    SMIC        
+        Uses           ACCBANK     
+                       ACCCOMM     
+                       ACCDISP     
+                       ACCREPBK    
+                       ACCSTAT     
+                       ACCSTD      
+                       ACCUNPD     
+                       DEBITACC    
+                       VATRPT      
+       
+       
+       
+      Program/procedure name  ACCREF      
+        Source in             ACCREF.PRG  
+        Called from    ACCSUBMN    
+       
+       
+       
+      Program/procedure name  ACCREPBK    
+        Source in             ACCREPBK.PRG
+        Called from    ACCMENU     
+       
+       
+       
+      Program/procedure name  ACCREPCM    
+        Source in             ACCREPCM.PRG
+       
+       
+       
+27/04/00                        ET's program                        page 5
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  ACCSTAT     
+        Source in             ACCSTAT.PRG 
+        Called from    ACCMENU     
+       
+       
+       
+      Program/procedure name  ACCSTD      
+        Source in             ACCSTD.PRG  
+        Called from    ACCMENU     
+       
+       
+       
+      Program/procedure name  ACCSUBMN    
+        Source in             ACCSUBMN.PRG
+        Called from    SMIC        
+        Uses           ACCCHANG    
+                       ACCDEBIT    
+                       ACCDEBPR    
+                       ACCDEPOS    
+                       ACCREF      
+                       ACCTODEB    
+                       ACCUPBNK    
+       
+       
+       
+      Program/procedure name  ACCTODEB    
+        Source in             ACCTODEB.PRG
+        Called from    ACCSUBMN    
+       
+       
+       
+      Program/procedure name  ACCUNPD     
+        Source in             ACCUNPD.PRG 
+        Called from    ACCMENU     
+       
+       
+       
+      Program/procedure name  ACCUPBNK    
+        Source in             ACCUPBNK.PRG
+        Called from    ACCSUBMN    
+       
+       
+       
+27/04/00                        ET's program                        page 6
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  ADVADD      
+        Description :                                       
+        Source in             ADVADD.PRG  
+        Called from    ADVMENU     
+       
+        This program is used to enter new adverts.                           
+        This is necessary as all leads are attached to an advert so we can   
+        see what is working for us.                                          
+                                                                             
+        Please do not enter any adverts without first checking with the      
+        National Sales Manager or the M.D.                                   
+       
+       
+      Program/procedure name  ADVCHANG    
+        Source in             ADVCHANG.PRG
+        Called from    ADVMENU     
+       
+       
+       
+      Program/procedure name  ADVDELET    
+        Source in             ADVDELET.PRG
+        Called from    ADVMENU     
+       
+       
+       
+      Program/procedure name  ADVDISP     
+        Source in             ADVDISP.PRG 
+        Called from    ADVMENU     
+       
+       
+       
+      Program/procedure name  ADVEDIT     
+        Description :                                       
+        Source in             ADVEDIT.PRG 
+        Called from    ADVMENU     
+       
+        This program is used to change details of an advert such as the cost 
+        of it, what kind of an advert it is and a description of the advert. 
+       
+       
+      Program/procedure name  ADVLIST     
+        Source in             ADVLIST.PRG 
+        Called from    ADVMENU     
+       
+       
+       
+27/04/00                        ET's program                        page 7
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  ADVMENU     
+        Source in             ADVMENU.PRG 
+        Called from    MIA         
+                       SMIC        
+        Uses           ADVADD      
+                       ADVCHANG    
+                       ADVDELET    
+                       ADVDISP     
+                       ADVEDIT     
+                       ADVLIST     
+                       ADVNCOST    
+       
+       
+       
+      Program/procedure name  ADVNCOST    
+        Source in             ADVNCOST.PRG
+        Called from    ADVMENU     
+       
+       
+       
+      Program/procedure name  BACKDISP    
+        Source in             TWIN.PRG    
+        Called from    TWIN        
+       
+       
+       
+      Program/procedure name  BEARBUY     
+        Source in             BEARBUY.PRG 
+        Called from    OTHTRNMN    
+                       TRNSUBMN    
+       
+       
+       
+      Program/procedure name  BEARDLV     
+        Source in             BEARDLV.PRG 
+        Called from    CHECKRUN    
+       
+       
+       
+      Program/procedure name  BEARSL      
+        Source in             BEARSL.PRG  
+        Called from    OTHTRNMN    
+                       TRNSUBMN    
+       
+       
+       
+27/04/00                        ET's program                        page 8
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  BELDIV      
+        Source in             BELDIV.PRG  
+        Uses           BELWRITE    
+                       ENDDO       
+       
+       
+       
+      Program/procedure name  BELWRITE    
+        Source in                         
+        Called from    BELDIV      
+       
+       
+       
+      Program/procedure name  BRADD       
+        Source in             PORDERS.PRG 
+        Called from    PORDERS     
+       
+       
+       
+      Program/procedure name  BRCOUNT     
+        Source in             PLEADS.PRG  
+        Called from    PLEADS      
+       
+       
+       
+      Program/procedure name  BUY_ORDER   
+        Source in             TRNBUY.PRG  
+        Called from    TRNBUY      
+       
+       
+       
+      Program/procedure name  CHECKRUN    
+        Source in             CHECKRUN.PRG
+        Uses           BEARDLV     
+                       DIVIDEND    
+                       FILECOPY    
+                       FUTAUTO     
+                       FUTEXP      
+                       FUTMARG     
+                       GM_UPD      
+                       HED_UPD     
+                       INTEREST    
+                       LDUNALL     
+                       PRCEXTR     
+                       RECCHECK    
+                       STDREIN2    
+                       TRNNPLAB    
+                       TRNORDER    
+                       UPGRADE     
+       
+       
+       
+27/04/00                        ET's program                        page 9
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  CHEQUE_OTH  
+        Source in             STDADD.PRG  
+        Called from    STDADD      
+        Uses           GET_CHEQUE  
+       
+       
+       
+      Program/procedure name  CLGENDEB    
+        Source in             CLGENDEB.PRG
+        Called from    CL_AC_MN    
+       
+       
+       
+      Program/procedure name  CLIENT      
+        Source in             CLIENT.PRG  
+        Uses           CLNTMENU    
+                       CL_AC_MN    
+                       CNTMENU     
+                       PRDMENU     
+       
+       
+       
+      Program/procedure name  CLNTADD     
+        Source in             CLNTADD.PRG 
+        Called from    CLNTMENU    
+       
+       
+       
+      Program/procedure name  CLNTMENU    
+        Source in             CLNTMENU.PRG
+        Called from    CLIENT      
+        Uses           CLNTADD     
+       
+       
+       
+      Program/procedure name  CL_AC_MN    
+        Source in             CL_AC_MN.PRG
+        Called from    CLIENT      
+        Uses           CLGENDEB    
+       
+       
+       
+27/04/00                        ET's program                        page 10
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  CNTADD      
+        Source in             CNTADD.PRG  
+        Called from    CNTMENU     
+       
+       
+       
+      Program/procedure name  CNTDEL      
+        Source in             CNTDEL.PRG  
+        Called from    CNTMENU     
+        Uses           FINDCNT     
+       
+       
+       
+      Program/procedure name  CNTEDIT     
+        Source in             CNTEDIT.PRG 
+        Called from    CNTMENU     
+        Uses           CNTEDIT1    
+                       CNTEDIT2    
+                       CNTEDIT3    
+                       FINDCNT     
+       
+       
+       
+      Program/procedure name  CNTEDIT1    
+        Source in             CNTEDIT.PRG 
+        Called from    CNTEDIT     
+       
+       
+       
+      Program/procedure name  CNTEDIT2    
+        Source in             CNTEDIT.PRG 
+        Called from    CNTEDIT     
+       
+       
+       
+      Program/procedure name  CNTEDIT3    
+        Source in             CNTEDIT.PRG 
+        Called from    CNTEDIT     
+       
+       
+       
+      Program/procedure name  CNTLIST     
+        Source in             CNTLIST.PRG 
+        Called from    CNTMENU     
+       
+       
+       
+27/04/00                        ET's program                        page 11
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  CNTLIST1    
+        Source in             CNTLIST1.PRG
+        Called from    CNTMENU     
+       
+       
+       
+      Program/procedure name  CNTMENU     
+        Source in             CNTMENU.PRG 
+        Called from    CLIENT      
+        Uses           CNTADD      
+                       CNTDEL      
+                       CNTEDIT     
+                       CNTLIST     
+                       CNTLIST1    
+                       CNTPRNT     
+       
+       
+       
+      Program/procedure name  CNTPRNT     
+        Source in             CNTPRNT.PRG 
+        Called from    CNTMENU     
+       
+       
+       
+      Program/procedure name  CNT_MOVE    
+        Source in             CNT_MOVE.PRG
+       
+       
+       
+      Program/procedure name  CRS1        
+        Description :                                       
+        Source in             CRS1.PRG    
+        Called from    CRSMAN      
+                       SMIC        
+        Uses           MSG_DISP    
+                       SHRALLOC    
+                       SHRCHANG    
+                       SHRCONS     
+                       SHRDELET    
+                       SHREDIT     
+                       SHRHOLD     
+                       SHRMAN      
+                       SHRSPLIT    
+                       SHR_EXP     
+                       TRNNPL      
+                       TRNSHRAB    
+                       TRNSTOP     
+                       WKSHRPRN    
+       
+        This menu is used to maintain the share database. If what you want is
+        not on this menu it is probably on the 'Transaction' menu.           
+                                                                             
+27/04/00                        ET's program                        page 12
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  CRS1        
+       
+       
+      Program/procedure name  CRS2        
+        Description :                                       
+        Source in                         
+        Called from    CRSMAN      
+       
+        This menu is used to maintain student portfolios and change some     
+        student information.                                                 
+                                                                             
+        If what you want is not on this screen, it is probably on the 'Share'
+        menu.                                                                
+       
+       
+      Program/procedure name  CRS3        
+        Source in             CRS3.PRG    
+        Called from    CRSMAN      
+                       SMIC        
+        Uses           STDCASH     
+                       STDCLASS    
+                       STDCOUNT    
+                       STDRESET    
+                       STDSTART    
+                       STDWEEK     
+       
+       
+       
+      Program/procedure name  CRSMAN      
+        Description :                                       
+        Source in             CRSMAN.PRG  
+        Uses           CRS1        
+                       CRS2        
+                       CRS3        
+       
+        This program is for use by the course manager and assistants. With   
+        this program the student, their portfolios and the shares databases  
+        can be maintained. Just check all the options and you will probably  
+        be able to do what you want to.                                      
+                                                                             
+       
+       
+27/04/00                        ET's program                        page 13
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  DATAMENU    
+        Source in             DATAMENU.PRG
+        Called from    ETADMIN     
+        Uses           FINMOVE     
+                       LDOLD       
+                       TRNOLD      
+       
+       
+       
+      Program/procedure name  DATARESET   
+        Source in                         
+        Called from    PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  DATASTORE   
+        Source in                         
+        Called from    PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  DATAVIEW    
+        Source in             DATAVIEW.PRG
+        Uses           DTA_DATE    
+                       DTA_HIGH    
+                       DTA_LOW     
+                       DTA_PRICE   
+                       DTA_SHARE   
+                       DTA_VOLUME  
+                       STABILIZE   
+       
+       
+       
+      Program/procedure name  DBCREATEIN  
+        Source in                         
+        Called from    RE_INDEX    
+                       TO_DO       
+       
+       
+       
+      Program/procedure name  DB_ERROR    
+        Source in             ERRORSYS.PRG
+       
+       
+       
+27/04/00                        ET's program                        page 14
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  DEBITACC    
+        Source in             DEBITACC.PRG
+        Called from    ACCMENU     
+       
+       
+       
+      Program/procedure name  DEBIT_ORDE  
+        Source in             STDADD.PRG  
+        Called from    STDADD      
+       
+       
+       
+      Program/procedure name  DIVIDEND    
+        Source in             DIVIDEND.PRG
+        Called from    CHECKRUN    
+        Uses           IND_PROG    
+       
+       
+       
+      Program/procedure name  DIV_VAL_DT  
+        Source in             SHRDIV.PRG  
+        Called from    SHRDIV      
+       
+       
+       
+      Program/procedure name  DIV_VAL_TY  
+        Source in             SHRDIV.PRG  
+        Called from    SHRDIV      
+       
+       
+       
+      Program/procedure name  DOS_WRITE   
+        Source in             ACCDEBIT.PRG
+        Called from    ACCDEBIT    
+       
+       
+       
+      Program/procedure name  DTA_DATE    
+        Source in             DATAVIEW.PRG
+        Called from    DATAVIEW    
+                       PRICE_GRAP  
+       
+       
+       
+27/04/00                        ET's program                        page 15
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  DTA_HIGH    
+        Source in             DATAVIEW.PRG
+        Called from    DATAVIEW    
+       
+       
+       
+      Program/procedure name  DTA_LOW     
+        Source in             DATAVIEW.PRG
+        Called from    DATAVIEW    
+       
+       
+       
+      Program/procedure name  DTA_PRICE   
+        Source in             DATAVIEW.PRG
+        Called from    DATAVIEW    
+                       PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  DTA_SHARE   
+        Source in             DATAVIEW.PRG
+        Called from    DATAVIEW    
+       
+       
+       
+      Program/procedure name  DTA_VOLUME  
+        Source in             DATAVIEW.PRG
+        Called from    DATAVIEW    
+       
+       
+       
+      Program/procedure name  DUP         
+        Source in             DUP.PRG     
+       
+       
+       
+      Program/procedure name  EDIT_TODO   
+        Source in             TO_DO.PRG   
+       
+       
+       
+      Program/procedure name  ENDDO       
+        Source in                         
+        Called from    BELDIV      
+       
+       
+       
+27/04/00                        ET's program                        page 16
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  ENQMENU     
+        Source in             ENQMENU.PRG 
+        Called from    SMIC        
+        Uses           ACCDISP     
+                       LDDISP      
+                       LDLOOK      
+                       SHRLOOK     
+                       SMICLAB     
+                       STDLOOK     
+                       TRNLOOK     
+       
+       
+       
+      Program/procedure name  ERRORSYS    
+        Source in             ERRORSYS.PRG
+       
+       
+       
+      Program/procedure name  ETADMIN     
+        Source in             ETADMIN.PRG 
+        Called from    SMIC        
+        Uses           DATAMENU    
+                       FUTMENU     
+                       REPMENU     
+                       RE_INDEX    
+                       SECMENU     
+                       SHR_DUP     
+                       SYSPARAM    
+       
+       
+       
+      Program/procedure name  EXPR_ERROR  
+        Source in             ERRORSYS.PRG
+       
+       
+       
+      Program/procedure name  FIELDNAME   
+        Source in                         
+        Called from    LDOLD       
+       
+       
+       
+27/04/00                        ET's program                        page 17
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  FILECOPY    
+        Source in                         
+        Called from    CHECKRUN    
+       
+       
+       
+      Program/procedure name  FINDCNT     
+        Source in             FINDCNT.PRG 
+        Called from    CNTDEL      
+                       CNTEDIT     
+       
+       
+       
+      Program/procedure name  FINDX_MAX   
+        Source in             GRAPH.PRG   
+        Called from    PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  FINDY_MAX   
+        Source in             GRAPH.PRG   
+        Called from    PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  FINMOVE     
+        Source in             FINMOVE.PRG 
+        Called from    DATAMENU    
+       
+       
+       
+      Program/procedure name  FINPRNT     
+        Source in             FINPRNT.PRG 
+       
+       
+       
+      Program/procedure name  FIX         
+        Source in             FIX.PRG     
+       
+       
+       
+      Program/procedure name  FOCUSLB     
+        Source in             FOCUSLB.PRG 
+       
+       
+       
+27/04/00                        ET's program                        page 18
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  FUTADD      
+        Source in             FUTADD.PRG  
+        Called from    FUTMENU     
+        Uses           VAL_CALC_T  
+                       VAL_FUT_DT  
+                       VAL_FUT_NM  
+                       VAL_MARGIN  
+                       VAL_PERC_V  
+       
+       
+       
+      Program/procedure name  FUTAUTO     
+        Source in             FUTAUTO.PRG 
+        Called from    CHECKRUN    
+       
+       
+       
+      Program/procedure name  FUTDELET    
+        Source in             FUTDELET.PRG
+        Called from    FUTMENU     
+       
+       
+       
+      Program/procedure name  FUTDISP     
+        Source in             FUTDISP.PRG 
+        Called from    FUTUREMN    
+                       TRNSUBMN    
+       
+       
+       
+      Program/procedure name  FUTEDIT     
+        Source in             FUTEDIT.PRG 
+        Called from    FUTMENU     
+        Uses           VAL_CALC_T  
+                       VAL_MARGIN  
+       
+       
+       
+      Program/procedure name  FUTEXP      
+        Source in             FUTEXP.PRG  
+        Called from    CHECKRUN    
+                       FUTMAN      
+       
+       
+       
+27/04/00                        ET's program                        page 19
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  FUTLONG     
+        Source in             FUTLONG.PRG 
+        Called from    FUTUREMN    
+                       TRNSUBMN    
+       
+       
+       
+      Program/procedure name  FUTMAN      
+        Source in             FUTMAN.PRG  
+        Uses           FUTEXP      
+                       FUTMARG     
+                       RECLOCK     
+       
+       
+       
+      Program/procedure name  FUTMARG     
+        Source in             FUTMARG.PRG 
+        Called from    CHECKRUN    
+                       FUTMAN      
+       
+       
+       
+      Program/procedure name  FUTMENU     
+        Source in             FUTMENU.PRG 
+        Called from    ETADMIN     
+        Uses           FUTADD      
+                       FUTDELET    
+                       FUTEDIT     
+       
+       
+       
+      Program/procedure name  FUTPRNT     
+        Source in             FUTPRNT.PRG 
+        Called from    PORTPRNT    
+                       WKLYMENU    
+       
+       
+       
+      Program/procedure name  FUTSHORT    
+        Source in             FUTSHORT.PRG
+        Called from    FUTUREMN    
+                       TRNSUBMN    
+       
+       
+       
+27/04/00                        ET's program                        page 20
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  FUTUREMN    
+        Source in             FUTUREMN.PRG
+        Called from    TWIN        
+        Uses           FUTDISP     
+                       FUTLONG     
+                       FUTSHORT    
+       
+       
+       
+      Program/procedure name  GET_CHEQUE  
+        Source in             ACCCHANG.PRG
+        Called from    ACCCHANG    
+                       CHEQUE_OTH  
+       
+       
+       
+      Program/procedure name  GET_CREDIT  
+        Source in             ACCCHANG.PRG
+        Called from    ACCCHANG    
+                       STDADD      
+       
+       
+       
+      Program/procedure name  GM_UPD      
+        Source in             GM_UPD.PRG  
+        Called from    CHECKRUN    
+       
+       
+       
+      Program/procedure name  GRAPH       
+        Source in             GRAPH.PRG   
+        Uses           PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  HED_TEST    
+        Source in             HED_TEST.PRG
+        Uses           HED_UPD     
+                       UPGRADE     
+       
+       
+       
+27/04/00                        ET's program                        page 21
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  HED_UPD     
+        Source in             HED_UPD.PRG 
+        Called from    CHECKRUN    
+                       HED_TEST    
+        Uses           NEW_SECTOR  
+                       SHR_DATE    
+                       STR_COM     
+       
+       
+       
+      Program/procedure name  HITBOTTOM   
+        Source in                         
+        Called from    TO_DO       
+       
+       
+       
+      Program/procedure name  IND_PROG    
+        Source in             PRCEXTR.PRG 
+        Called from    DIVIDEND    
+                       PRCEXTR     
+       
+       
+       
+      Program/procedure name  INTEREST    
+        Source in             INTEREST.PRG
+        Called from    CHECKRUN    
+       
+       
+       
+      Program/procedure name  ISBIT       
+        Source in                         
+        Called from    RE_INDEX    
+       
+       
+       
+      Program/procedure name  JIM         
+        Source in             JIM.PRG     
+       
+       
+       
+      Program/procedure name  JIMP        
+        Source in             JIMP.PRG    
+        Uses           MEDSTAT1    
+       
+       
+       
+27/04/00                        ET's program                        page 22
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  JIMPRN      
+        Source in             JIMPRN.PRG  
+       
+       
+       
+      Program/procedure name  LABELLINE   
+        Source in             MEDLAB.PRG  
+        Called from    MEDLAB      
+       
+       
+       
+      Program/procedure name  LABELX      
+        Source in                         
+        Called from    LAB_X_AXIS  
+       
+       
+       
+      Program/procedure name  LABELY      
+        Source in                         
+        Called from    LAB_Y_AXIS  
+       
+       
+       
+      Program/procedure name  LAB_X_AXIS  
+        Source in             GRAPH.PRG   
+        Called from    PRICE_GRAP  
+        Uses           LABELX      
+                       SAYSTRING   
+                       WEEK        
+       
+       
+       
+      Program/procedure name  LAB_Y_AXIS  
+        Source in             GRAPH.PRG   
+        Called from    PRICE_GRAP  
+        Uses           LABELY      
+       
+       
+       
+      Program/procedure name  LDADD       
+        Description :         Lead entry program            
+        Source in             LDADD.PRG   
+        Called from    LDMENU      
+        Uses           LDAD_V04    
+                       LDAD_V06    
+                       LDAD_V07    
+                       LDAD_V08    
+                       LDAD_V09    
+                       PRE_SRC_CD  
+                       PRE_SRC_DT  
+                       VAL_ARC_NO  
+                       VAL_LD_DT_  
+27/04/00                        ET's program                        page 23
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  LDADD       
+                       VAL_LD_P_C  
+                       VAL_LD_RAC  
+                       VAL_LD_SEL  
+                       VAL_LD_SEX  
+                       VAL_LD_SRC  
+                       VAL_LD_SUR  
+       
+        This screen is used for the initial data capture of a lead. As our   
+        company depends on leads it is important to fill in as much          
+        information as possible as accurately as possible. Some important    
+        fields will only allow certain characters. Press F1 again when you   
+        are there for more help.                                             
+       
+       
+      Program/procedure name  LDADV       
+        Source in             LDADV.PRG   
+       
+       
+       
+      Program/procedure name  LDAD_V04    
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+       
+       
+       
+      Program/procedure name  LDAD_V06    
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+                       LDREP       
+       
+       
+       
+      Program/procedure name  LDAD_V07    
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+                       LDREP       
+       
+       
+       
+27/04/00                        ET's program                        page 24
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  LDAD_V08    
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+       
+       
+       
+      Program/procedure name  LDAD_V09    
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITA     
+                       LDREP       
+       
+       
+       
+      Program/procedure name  LDAD_V10    
+        Source in             LDADD.PRG   
+        Called from    LDEDITA     
+       
+       
+       
+      Program/procedure name  LDAD_V11    
+        Source in             LDADD.PRG   
+        Called from    LDEDITA     
+       
+       
+       
+      Program/procedure name  LDARCLB     
+        Description :                                       
+        Source in             LDARCLB.PRG 
+       
+        This program will print out labels for any lead that you might have. 
+                                                                             
+        Some points to remember -                                            
+           * The computer must have a printer.                               
+           * There must be labels in the printer.                            
+           * You must know the archive no's.                                 
+        To leave the program, simply enter a blank archive number.           
+       
+       
+      Program/procedure name  LDAREALB    
+        Source in             LDAREALB.PRG
+        Uses           MAREALINE   
+       
+       
+       
+27/04/00                        ET's program                        page 25
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  LDDELETE    
+        Source in             LDDELETE.PRG
+       
+       
+       
+      Program/procedure name  LDDISP      
+        Description :         Lead display screen           
+        Source in             LDDISP.PRG  
+        Called from    ENQMENU     
+                       LDMENU      
+       
+        This program is used to find out archive numbers of leads. Enter in  
+        the surname, or if you think it is misspelled just the first part of 
+        the surname. This will bring up a list of all leads with this        
+        surname, and the assosiated rep.                                     
+       
+       
+      Program/procedure name  LDEDIT      
+        Description :                                       
+        Source in             LDEDIT.PRG  
+        Called from    LDMENU      
+        Uses           LDEDITA     
+                       LDEDITB     
+       
+        The lead edit screen is broken into 2 portions so that you do not    
+        need to go through many fields when you only want to edit one.       
+                                                                             
+        The first option edits sales information while the second one edits  
+        details about the customer himself.                                  
+       
+       
+      Program/procedure name  LDEDITA     
+        Source in             LDEDIT.PRG  
+        Called from    LDEDIT      
+        Uses           LDAD_V09    
+                       LDAD_V10    
+                       LDAD_V11    
+       
+       
+       
+      Program/procedure name  LDEDITB     
+        Source in             LDEDIT.PRG  
+        Called from    LDEDIT      
+        Uses           LDAD_V04    
+                       LDAD_V06    
+                       LDAD_V07    
+                       PRE_SRC_CD  
+                       PRE_SRC_DT  
+                       VAL_LD_DT_  
+                       VAL_LD_P_C  
+                       VAL_LD_RAC  
+                       VAL_LD_SEL  
+27/04/00                        ET's program                        page 26
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  LDEDITB     
+                       VAL_LD_SEX  
+                       VAL_LD_SRC  
+       
+       
+       
+      Program/procedure name  LDFARMER    
+        Source in             LDFARMER.PRG
+        Uses           MAREALINE   
+                       SIMHEAD     
+       
+       
+       
+      Program/procedure name  LDLAB       
+        Source in             LDLAB.PRG   
+        Called from    PRNTMENU    
+       
+       
+       
+      Program/procedure name  LDLOOK      
+        Description :         Lead display screen           
+        Source in             LDLOOK.PRG  
+        Called from    ENQMENU     
+       
+        This screen is used to display details of a particular lead. To look 
+        up the information you will need the archive number of the lead from 
+        your lead card.                                                      
+       
+       
+      Program/procedure name  LDMENU      
+        Source in             LDMENU.PRG  
+        Called from    MIA         
+                       SMIC        
+        Uses           LDADD       
+                       LDDISP      
+                       LDEDIT      
+                       LDREMOVE    
+                       LDREP       
+       
+       
+       
+      Program/procedure name  LDOLD       
+        Source in             LDOLD.PRG   
+        Called from    DATAMENU    
+        Uses           FIELDNAME   
+       
+       
+       
+27/04/00                        ET's program                        page 27
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  LDPRLAB     
+        Source in             LDPRLAB.PRG 
+        Called from    PRNTMENU    
+       
+       
+       
+      Program/procedure name  LDREMOVE    
+        Source in             LDREMOVE.PRG
+        Called from    LDMENU      
+       
+       
+       
+      Program/procedure name  LDREP       
+        Source in             LDREP.PRG   
+        Called from    LDMENU      
+        Uses           LDAD_V06    
+                       LDAD_V07    
+                       LDAD_V09    
+       
+       
+       
+      Program/procedure name  LDSPCLB     
+        Source in             LDSPCLB.PRG 
+       
+       
+       
+      Program/procedure name  LDUNALL     
+        Source in             LDUNALL.PRG 
+        Called from    CHECKRUN    
+       
+       
+       
+      Program/procedure name  LD_KILL_EN  
+        Source in             LDADD.PRG   
+        Called from    PRE_SRC_CD  
+       
+       
+       
+      Program/procedure name  LOAD_ARR    
+        Source in             STDAREAL.PRG
+        Called from    STDAREAL    
+       
+       
+       
+27/04/00                        ET's program                        page 28
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  MAREALINE   
+        Source in             LDFARMER.PRG
+        Called from    LDAREALB    
+                       LDFARMER    
+       
+       
+       
+      Program/procedure name  MEDANAL     
+        Source in             MEDANAL.PRG 
+        Called from    MEDMENU     
+       
+       
+       
+      Program/procedure name  MEDAREAS    
+        Source in             MEDAREAS.PRG
+        Called from    MEDMENU     
+        Uses           MED_1_COUN  
+                       MED_2_PRIN  
+       
+       
+       
+      Program/procedure name  MEDLAB      
+        Source in             MEDLAB.PRG  
+        Called from    MEDMENU     
+        Uses           LABELLINE   
+       
+       
+       
+      Program/procedure name  MEDMENU     
+        Source in             MEDMENU.PRG 
+        Called from    MIA         
+                       SMIC        
+        Uses           MEDANAL     
+                       MEDAREAS    
+                       MEDLAB      
+                       MEDRDIG     
+                       MEDSALES    
+                       MEDSTAT     
+                       MEDSTAT1    
+       
+       
+       
+27/04/00                        ET's program                        page 29
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  MEDPROC1    
+        Source in             MEDSTAT.PRG 
+        Called from    MEDSTAT     
+                       MEDSTAT1    
+       
+       
+       
+      Program/procedure name  MEDRDIG     
+        Source in             MEDRDIG.PRG 
+        Called from    MEDMENU     
+        Uses           PR_LINE1    
+                       PR_LINE2    
+                       PR_LINE3    
+                       PSTAT1      
+                       PSTAT2      
+       
+       
+       
+      Program/procedure name  MEDSALES    
+        Source in             MEDSALES.PRG
+        Called from    MEDMENU     
+       
+       
+       
+      Program/procedure name  MEDSTAT     
+        Source in             MEDSTAT.PRG 
+        Called from    MEDMENU     
+        Uses           MEDPROC1    
+       
+       
+       
+      Program/procedure name  MEDSTAT1    
+        Source in             MEDSTAT1.PRG
+        Called from    JIMP        
+                       MEDMENU     
+        Uses           MEDPROC1    
+       
+       
+       
+      Program/procedure name  MED_1_COUN  
+        Source in             MEDAREAS.PRG
+        Called from    MEDAREAS    
+       
+       
+       
+27/04/00                        ET's program                        page 30
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  MED_2_PRIN  
+        Source in             MEDAREAS.PRG
+        Called from    MEDAREAS    
+       
+       
+       
+      Program/procedure name  MENU        
+        Source in             MENU.PRG    
+        Uses           STDMENU     
+       
+       
+       
+      Program/procedure name  MERGE       
+        Source in             MERGE.PRG   
+        Called from    STDPMENU    
+        Uses           MERGE_STD   
+       
+       
+       
+      Program/procedure name  MERGE_STD   
+        Source in             MERGE.PRG   
+        Called from    MERGE       
+       
+       
+       
+      Program/procedure name  MIA         
+        Description :         Data capture program          
+        Source in             MIA.PRG     
+        Uses           ADVMENU     
+                       LDMENU      
+                       MEDMENU     
+                       PRNTMENU    
+                       STDMENU1    
+       
+        Data capture program                                                 
+       
+       
+      Program/procedure name  MISC_ERROR  
+        Source in             ERRORSYS.PRG
+       
+       
+       
+27/04/00                        ET's program                        page 31
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  MOVE_BAR    
+        Source in             RE_INDEX.PRG
+       
+       
+       
+      Program/procedure name  MSG_DISP    
+        Source in             MSG_DISP.PRG
+        Called from    CRS1        
+       
+       
+       
+      Program/procedure name  NEW_SECTOR  
+        Source in             HED_UPD.PRG 
+        Called from    HED_UPD     
+        Uses           STR_COM     
+       
+       
+       
+      Program/procedure name  NNETEXTATT  
+        Source in                         
+        Called from    PRCEXTR     
+                       RE_INDEX    
+       
+       
+       
+      Program/procedure name  NOTES       
+        Source in             NOTES.PRG   
+        Called from    SMIC        
+       
+       
+       
+      Program/procedure name  NOTES_UDF   
+        Source in             NOTES.PRG   
+       
+       
+       
+      Program/procedure name  NOTPROG     
+        Source in             NOTPROG.PRG 
+       
+       
+       
+      Program/procedure name  NOT_DEL_IT  
+        Source in             NOTES.PRG   
+       
+       
+       
+27/04/00                        ET's program                        page 32
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  NOT_EDIT_I  
+        Source in             NOTES.PRG   
+       
+       
+       
+      Program/procedure name  NOT_EXCEP   
+        Source in             NOTES.PRG   
+       
+       
+       
+      Program/procedure name  NOT_INS_IT  
+        Source in             NOTES.PRG   
+       
+       
+       
+      Program/procedure name  NOT_NM_NUM  
+        Source in             NOTES.PRG   
+       
+       
+       
+      Program/procedure name  NOT_NUM_NM  
+        Source in             NOTES.PRG   
+       
+       
+       
+      Program/procedure name  NOT_PRINT   
+        Source in             NOTES.PRG   
+       
+       
+       
+      Program/procedure name  NOT_SUB_ME  
+        Source in             NOTES.PRG   
+       
+       
+       
+      Program/procedure name  OPEN_ERROR  
+        Source in             ERRORSYS.PRG
+       
+       
+       
+      Program/procedure name  ORDEDIT     
+        Source in             ORDEDIT.PRG 
+        Called from    OTHTRNMN    
+       
+       
+       
+27/04/00                        ET's program                        page 33
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  OTHTRNMN    
+        Source in             OTHTRNMN.PRG
+        Called from    TWIN        
+        Uses           BEARBUY     
+                       BEARSL      
+                       ORDEDIT     
+                       PREBUY      
+                       PRESELL     
+                       TRNEDIT     
+                       TRNNPLEX    
+       
+       
+       
+      Program/procedure name  OUTST       
+        Source in             OUTST.PRG   
+        Uses           SIMHEAD     
+                       SIMTITLE    
+       
+       
+       
+      Program/procedure name  P8_ARR_UDF  
+        Source in             ACCCHANG.PRG
+        Called from    ACCCHANG    
+        Uses           A1_PMT_TYP  
+                       A2_PMT_DT   
+                       A4_COMMENT  
+                       A7_C_RECNO  
+       
+       
+       
+      Program/procedure name  PARAMS      
+        Source in             PARAMS.PRG  
+        Uses           SIMHEAD     
+       
+       
+       
+      Program/procedure name  PASPRNT     
+        Source in             PASPRNT.PRG 
+       
+       
+       
+      Program/procedure name  PCT         
+        Source in             PCT.PRG     
+       
+       
+       
+27/04/00                        ET's program                        page 34
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  PFOLLDT     
+        Source in             PFOLLDT.PRG 
+        Called from    PRNTMENU    
+       
+       
+       
+      Program/procedure name  PLEADS      
+        Source in             PLEADS.PRG  
+        Uses           BRCOUNT     
+       
+       
+       
+      Program/procedure name  PORDERS     
+        Source in             PORDERS.PRG 
+        Uses           BRADD       
+                       SIMHEAD     
+                       SIMTITLE    
+       
+       
+       
+      Program/procedure name  PORTPRNT    
+        Source in             PORTPRNT.PRG
+        Called from    WKLYMENU    
+        Uses           FUTPRNT     
+                       PORT_SUM_L  
+                       WEEK        
+       
+       
+       
+      Program/procedure name  PORT_SUM_L  
+        Source in             PORTPRNT.PRG
+        Called from    PORTPRNT    
+       
+       
+       
+      Program/procedure name  PRCEXTR     
+        Source in             PRCEXTR.PRG 
+        Called from    CHECKRUN    
+                       SHRMENU     
+        Uses           IND_PROG    
+                       NNETEXTATT  
+                       SHR_DATE    
+       
+       
+       
+27/04/00                        ET's program                        page 35
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  PRDADD      
+        Source in             PRDEDIT.PRG 
+        Called from    PRDEDIT     
+        Uses           VAL_PRD_CO  
+                       VAL_PRD_TY  
+       
+       
+       
+      Program/procedure name  PRDEDIT     
+        Source in             PRDEDIT.PRG 
+        Called from    PRDMENU     
+        Uses           PRDADD      
+                       PRD_EDIT    
+       
+       
+       
+      Program/procedure name  PRDMENU     
+        Source in             PRDMENU.PRG 
+        Called from    CLIENT      
+        Uses           PRDEDIT     
+       
+       
+       
+      Program/procedure name  PRD_EDIT    
+        Source in             PRDEDIT.PRG 
+        Called from    PRDEDIT     
+        Uses           VAL_PAY_TY  
+       
+       
+       
+      Program/procedure name  PREBUY      
+        Source in             PREBUY.PRG  
+        Called from    OTHTRNMN    
+       
+       
+       
+      Program/procedure name  PRESELL     
+        Source in             PRESELL.PRG 
+        Called from    OTHTRNMN    
+       
+       
+       
+27/04/00                        ET's program                        page 36
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  PRE_SRC_CD  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+        Uses           LD_KILL_EN  
+       
+       
+       
+      Program/procedure name  PRE_SRC_DT  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+       
+       
+       
+      Program/procedure name  PRICE_GRAP  
+        Source in             GRAPH.PRG   
+        Called from    GRAPH       
+        Uses           DATARESET   
+                       DATASTORE   
+                       DTA_DATE    
+                       DTA_PRICE   
+                       FINDX_MAX   
+                       FINDY_MAX   
+                       LAB_X_AXIS  
+                       LAB_Y_AXIS  
+                       SAYSTRING   
+                       SETHIRES    
+                       SETTEXT     
+                       SHR_DATE    
+                       XYAXES      
+                       XYGRAPH     
+       
+       
+       
+      Program/procedure name  PRINT_ERRO  
+        Source in             ERRORSYS.PRG
+       
+       
+       
+      Program/procedure name  PRM_DO_EDI  
+        Source in             SYSPARAM.PRG
+        Called from    SYSPARAM    
+       
+       
+       
+27/04/00                        ET's program                        page 37
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  PRNPORT     
+        Source in             TRNDISP.PRG 
+        Called from    TRNDISP     
+       
+       
+       
+      Program/procedure name  PRNTMENU    
+        Source in             PRNTMENU.PRG
+        Called from    MIA         
+                       SMIC        
+        Uses           LDLAB       
+                       LDPRLAB     
+                       PFOLLDT     
+                       REPRATIO    
+                       REPSTAT     
+                       RLEADS      
+                       RSALES      
+       
+       
+       
+      Program/procedure name  PRN_LAB     
+        Source in             STDAREAL.PRG
+        Called from    STDAREAL    
+       
+       
+       
+      Program/procedure name  PRN_MEDANA  
+        Source in             MEDANAL.PRG 
+        Uses           PR_LINE1    
+                       PR_LINE2    
+                       PR_LINE3    
+                       PSTAT1      
+                       PSTAT2      
+       
+       
+       
+      Program/procedure name  PRT_LINE    
+        Source in             REPSTAT.PRG 
+        Called from    REPSTAT     
+       
+       
+       
+27/04/00                        ET's program                        page 38
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  PR_CH       
+        Source in             PR_CH.PRG   
+        Called from    SYSPARAM    
+       
+       
+       
+      Program/procedure name  PR_LINE1    
+        Source in             MEDRDIG.PRG 
+        Called from    MEDRDIG     
+                       PRN_MEDANA  
+       
+       
+       
+      Program/procedure name  PR_LINE2    
+        Source in             MEDRDIG.PRG 
+        Called from    MEDRDIG     
+                       PRN_MEDANA  
+       
+       
+       
+      Program/procedure name  PR_LINE3    
+        Source in             MEDRDIG.PRG 
+        Called from    MEDRDIG     
+                       PRN_MEDANA  
+       
+       
+       
+      Program/procedure name  PR_PROC     
+        Source in             STDTEMP.PRG 
+        Called from    STDTEMP     
+       
+       
+       
+      Program/procedure name  PR_TO_DO    
+        Source in             TO_DO.PRG   
+       
+       
+       
+      Program/procedure name  PSTAT1      
+        Source in             MEDRDIG.PRG 
+        Called from    MEDRDIG     
+                       PRN_MEDANA  
+        Uses           STAT_ADD    
+       
+       
+       
+27/04/00                        ET's program                        page 39
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  PSTAT2      
+        Source in             MEDRDIG.PRG 
+        Called from    MEDRDIG     
+                       PRN_MEDANA  
+       
+       
+       
+      Program/procedure name  QUESSIE     
+        Source in             QUESSIE.PRG 
+       
+       
+       
+      Program/procedure name  RATIODISP   
+        Source in             REPRATIO.PRG
+        Called from    REPRATIO    
+       
+       
+       
+      Program/procedure name  RECCHECK    
+        Source in             RECCHECK.PRG
+        Called from    CHECKRUN    
+       
+       
+       
+      Program/procedure name  RECLOCK     
+        Source in                         
+        Called from    FUTMAN      
+       
+       
+       
+      Program/procedure name  REIN_STD    
+        Source in             STDREIN2.PRG
+        Called from    STDREIN2    
+       
+       
+       
+      Program/procedure name  REPADD      
+        Source in             REPADD.PRG  
+        Called from    REPMENU     
+       
+       
+       
+27/04/00                        ET's program                        page 40
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  REPEDIT     
+        Source in             REPEDIT.PRG 
+        Called from    REPMENU     
+        Uses           VAL_REP_LE  
+                       VAL_REP_ST  
+       
+       
+       
+      Program/procedure name  REPMENU     
+        Source in             REPMENU.PRG 
+        Called from    ETADMIN     
+        Uses           REPADD      
+                       REPEDIT     
+       
+       
+       
+      Program/procedure name  REPRATIO    
+        Source in             REPRATIO.PRG
+        Called from    PRNTMENU    
+        Uses           RATIODISP   
+       
+       
+       
+      Program/procedure name  REPSTAT     
+        Source in             REPSTAT.PRG 
+        Called from    PRNTMENU    
+        Uses           PRT_LINE    
+       
+       
+       
+      Program/procedure name  RE_INDEX    
+        Source in             RE_INDEX.PRG
+        Called from    ETADMIN     
+        Uses           DBCREATEIN  
+                       ISBIT       
+                       NNETEXTATT  
+       
+       
+       
+      Program/procedure name  RLEADS      
+        Source in             RLEADS.PRG  
+        Called from    PRNTMENU    
+        Uses           RLEADSBR    
+       
+       
+       
+27/04/00                        ET's program                        page 41
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  RLEADSBR    
+        Source in             RLEADS.PRG  
+        Called from    RLEADS      
+       
+       
+       
+      Program/procedure name  RSALES      
+        Source in             RSALES.PRG  
+        Called from    PRNTMENU    
+       
+       
+       
+      Program/procedure name  SAYSTRING   
+        Source in                         
+        Called from    LAB_X_AXIS  
+                       PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  SECADD      
+        Source in             SECADD.PRG  
+       
+       
+       
+      Program/procedure name  SECDELET    
+        Source in             SECDELET.PRG
+        Called from    SECMENU     
+       
+       
+       
+      Program/procedure name  SECDISP     
+        Source in             SECDISP.PRG 
+        Called from    SECMENU     
+       
+       
+       
+      Program/procedure name  SECEDIT     
+        Source in             SECEDIT.PRG 
+        Called from    SECMENU     
+       
+       
+       
+27/04/00                        ET's program                        page 42
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  SECMENU     
+        Source in             SECMENU.PRG 
+        Called from    ETADMIN     
+        Uses           SECDELET    
+                       SECDISP     
+                       SECEDIT     
+                       SECPRNT     
+       
+       
+       
+      Program/procedure name  SECPRNT     
+        Source in             SECPRNT.PRG 
+        Called from    SECMENU     
+        Uses           SEC_PR_LIN  
+       
+       
+       
+      Program/procedure name  SECUNDO     
+        Source in             SECUNDO.PRG 
+       
+       
+       
+      Program/procedure name  SEC_PR_LIN  
+        Source in             SECPRNT.PRG 
+        Called from    SECPRNT     
+       
+       
+       
+      Program/procedure name  SEEK_POSN   
+        Source in             WKSHRPRN.PRG
+        Called from    WKSHRPRN    
+       
+       
+       
+      Program/procedure name  SELL_ORDER  
+        Source in             TRNSELL.PRG 
+        Called from    TRNSELL     
+       
+       
+       
+      Program/procedure name  SETHIRES    
+        Source in                         
+        Called from    PRICE_GRAP  
+       
+       
+       
+27/04/00                        ET's program                        page 43
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  SETTEXT     
+        Source in                         
+        Called from    PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  SET_BAR     
+        Source in             RE_INDEX.PRG
+       
+       
+       
+      Program/procedure name  SHRALLOC    
+        Source in             SHRALLOC.PRG
+        Called from    CRS1        
+       
+       
+       
+      Program/procedure name  SHRCHANG    
+        Description :                                       
+        Source in             SHRCHANG.PRG
+        Called from    CRS1        
+       
+        This program will change the name of a share on all students         
+        portfolios but will not delete the old share from the database as it 
+        will still be used in the printout.It will however appear on the list
+        of shares to be deleted and can be deleted after a week or so if the 
+        system does not automatically do so.                                 
+       
+       
+      Program/procedure name  SHRCONS     
+        Description :                                       
+        Source in             SHRCONS.PRG 
+        Called from    CRS1        
+       
+        This program will calculate a share consolidation and adjust all     
+        student portfolios accordingly.                                      
+                                                                             
+        The value you enter is the number of shares that will be consolidated
+        into one new share.                                                  
+                                                                             
+       
+       
+27/04/00                        ET's program                        page 44
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  SHRDELET    
+        Description :                                       
+        Source in             SHRDELET.PRG
+        Called from    CRS1        
+       
+        This program is used to delete a share from the database. It first   
+        checks to see if any students still hold the share. If any do you    
+        will be told their names and will not be permitted to delete the     
+        share. First find out what has happened to it. This program has      
+        basically become redundant as the system automatically deletes       
+        deleteable shares.                                                   
+       
+       
+      Program/procedure name  SHRDIV      
+        Source in             SHRDIV.PRG  
+        Called from    SHRMENU     
+        Uses           DIV_VAL_DT  
+                       DIV_VAL_TY  
+       
+       
+       
+      Program/procedure name  SHRDIVEX    
+        Source in             SHRDIVEX.PRG
+        Uses           SIMHEAD     
+       
+       
+       
+      Program/procedure name  SHREDIT     
+        Description :                                       
+        Source in             SHREDIT.PRG 
+        Called from    CRS1        
+       
+        This program is used to write comments on shares and to enter any    
+        forth coming dividends and dates. An LDR (Last Date to Register) must
+        be in the future as we will pay students dividends on that day.      
+                                                                             
+                                                                             
+       
+       
+      Program/procedure name  SHREXPL     
+        Source in             SHREXPL.PRG 
+       
+       
+       
+27/04/00                        ET's program                        page 45
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  SHRHOLD     
+        Source in             SHRHOLD.PRG 
+        Called from    CRS1        
+       
+       
+       
+      Program/procedure name  SHRJIM      
+        Source in             SHRJIM.PRG  
+        Uses           SIMHEAD     
+       
+       
+       
+      Program/procedure name  SHRLOOK     
+        Description :                                       
+        Source in             SHRLOOK.PRG 
+        Called from    ENQMENU     
+                       SHRMENU     
+       
+        This program will display information about any share such as any    
+        dividends due in the near future, and Derek's comments.The date      
+        associated with the comment is the date the comment was last updated.
+                                                                             
+                                                                             
+       
+       
+      Program/procedure name  SHRMAN      
+        Source in             SHRMAN.PRG  
+        Called from    CRS1        
+       
+       
+       
+      Program/procedure name  SHRMENU     
+        Source in             SHRMENU.PRG 
+        Called from    TWIN        
+        Uses           PRCEXTR     
+                       SHRDIV      
+                       SHRLOOK     
+       
+       
+       
+      Program/procedure name  SHRSPLIT    
+        Description :                                       
+        Source in             SHRSPLIT.PRG
+        Called from    CRS1        
+       
+        This program is used to calculate a share split and adjust the       
+        student portfolios accordingly.                                      
+                                                                             
+        The value that you enter is the number of new shares created from 1  
+        old share.                                                           
+       
+       
+27/04/00                        ET's program                        page 46
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  SHR_DATE    
+        Source in             PRCEXTR.PRG 
+        Called from    HED_UPD     
+                       PRCEXTR     
+                       PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  SHR_DUP     
+        Source in             SHR_DUP.PRG 
+        Called from    ETADMIN     
+       
+       
+       
+      Program/procedure name  SHR_EXP     
+        Source in             SHR_EXP.PRG 
+        Called from    CRS1        
+       
+       
+       
+      Program/procedure name  SIMHEAD     
+        Source in                         
+        Called from    LDFARMER    
+                       OUTST       
+                       PARAMS      
+                       PORDERS     
+                       SHRDIVEX    
+                       SHRJIM      
+                       STDSPECL    
+                       STDTVLLB    
+                       TRNSUBMN    
+                       WKLYMENU    
+       
+       
+       
+      Program/procedure name  SIMTITLE    
+        Source in                         
+        Called from    OUTST       
+                       PORDERS     
+       
+       
+       
+27/04/00                        ET's program                        page 47
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  SKIP_ANY    
+        Source in             DATAVIEW.PRG
+       
+       
+       
+      Program/procedure name  SKIP_TO_DO  
+        Source in             TO_DO.PRG   
+       
+       
+       
+      Program/procedure name  SMIC        
+        Description :         SMIC program                  
+        Source in             SMIC.PRG    
+        Uses           ACCMENU     
+                       ACCSUBMN    
+                       ADVMENU     
+                       CRS1        
+                       CRS3        
+                       ENQMENU     
+                       ETADMIN     
+                       LDMENU      
+                       MEDMENU     
+                       NOTES       
+                       PRNTMENU    
+                       STDMENU     
+                       STDPMENU    
+                       TWIN        
+                       UPGRADE     
+       
+        This is a simple program for use by anyone in the company to view    
+        information on our computer. Don't be scared of this program as it   
+        has been designed change or damage anything important. When you have 
+        finished please press 'Esc' to leave the computer free.              
+       
+       
+      Program/procedure name  SMICLAB     
+        Source in             SMICLAB.PRG 
+        Called from    ENQMENU     
+       
+       
+       
+      Program/procedure name  STABILIZE   
+        Source in                         
+        Called from    DATAVIEW    
+                       TO_DO       
+       
+       
+       
+27/04/00                        ET's program                        page 48
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  STAT_ADD    
+        Source in             MEDRDIG.PRG 
+        Called from    PSTAT1      
+       
+       
+       
+      Program/procedure name  STDACTIV    
+        Source in             STDACTIV.PRG
+        Called from    STDPMENU    
+       
+       
+       
+      Program/procedure name  STDADD      
+        Source in             STDADD.PRG  
+        Called from    STDMENU     
+                       STDMENU1    
+        Uses           CHEQUE_OTH  
+                       DEBIT_ORDE  
+                       GET_CREDIT  
+                       STD_V01     
+                       STD_V02     
+                       STD_V03     
+                       STD_V04     
+                       STD_V05     
+                       STD_V06     
+       
+       
+       
+      Program/procedure name  STDADDR     
+        Source in             STDADDR.PRG 
+       
+       
+       
+      Program/procedure name  STDAREAL    
+        Source in             STDAREAL.PRG
+        Called from    STDPMENU    
+        Uses           LOAD_ARR    
+                       PRN_LAB     
+       
+       
+       
+      Program/procedure name  STDCASH     
+        Description :                                       
+        Source in             STDCASH.PRG 
+        Called from    CRS3        
+       
+        This program will alter the starting capital and any related fields  
+        for a student. Just enter the amount it must change (negative for    
+        less money) and it shall be so.                                      
+                                                                             
+        N.B. This is not the same as giving the student more cash for profit 
+        he may have lost.                                                    
+27/04/00                        ET's program                        page 49
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  STDCASH     
+       
+       
+      Program/procedure name  STDCLASS    
+        Description :                                       
+        Source in             STDCLASS.PRG
+        Called from    CRS3        
+       
+        This program prints out the top ten students for the previous week   
+        based on their last months performance.                              
+       
+       
+      Program/procedure name  STDCODE     
+        Source in             STDCODE.PRG 
+       
+       
+       
+      Program/procedure name  STDCOMN1    
+        Source in             STDCOMN1.PRG
+        Called from    STDMENU2    
+       
+       
+       
+      Program/procedure name  STDCOMNT    
+        Source in             STDCOMNT.PRG
+        Called from    STDMENU     
+       
+       
+       
+      Program/procedure name  STDCOUNT    
+        Source in             STDCOUNT.PRG
+        Called from    CRS3        
+       
+       
+       
+      Program/procedure name  STDDISP     
+        Source in             STDDISP.PRG 
+       
+       
+       
+      Program/procedure name  STDEDIT     
+        Source in             STDEDIT.PRG 
+        Called from    STDMENU     
+                       STDMENU1    
+        Uses           STD_V01     
+                       STD_V02     
+                       STD_V03     
+                       STD_V04     
+                       STD_V05     
+                       STD_V06     
+       
+       
+27/04/00                        ET's program                        page 50
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  STDEDIT     
+       
+      Program/procedure name  STDEDIT1    
+        Source in             STDEDIT1.PRG
+        Called from    STDMENU2    
+       
+       
+       
+      Program/procedure name  STDEXPL     
+        Source in             STDEXPL.PRG 
+        Called from    STDMENU     
+       
+       
+       
+      Program/procedure name  STDFIN      
+        Source in             STDFIN.PRG  
+        Called from    STDPMENU    
+       
+       
+       
+      Program/procedure name  STDGRADD    
+        Source in             STDGRADD.PRG
+        Called from    STDMENU1    
+       
+       
+       
+      Program/procedure name  STDLEC      
+        Source in             STDLEC.PRG  
+       
+       
+       
+      Program/procedure name  STDLECT     
+        Source in             STDLECT.PRG 
+        Called from    STDMENU2    
+        Uses           VAL_STDLEC  
+       
+       
+       
+      Program/procedure name  STDLIST     
+        Source in             STDLIST.PRG 
+        Called from    STDPMENU    
+       
+       
+       
+27/04/00                        ET's program                        page 51
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  STDLOOK     
+        Description :                                       
+        Source in             STDLOOK.PRG 
+        Called from    ENQMENU     
+                       STDMENU1    
+       
+        This program is used to look up information on any student. Any      
+        changes to student information must be done by the admin girls.      
+                                                                             
+                                                                             
+                                                                             
+       
+       
+      Program/procedure name  STDMENU     
+        Source in             STDMENU.PRG 
+        Called from    MENU        
+                       SMIC        
+        Uses           STDADD      
+                       STDCOMNT    
+                       STDEDIT     
+                       STDEXPL     
+                       STDREINS    
+                       STDSUSP     
+                       STDUNPD     
+       
+       
+       
+      Program/procedure name  STDMENU1    
+        Source in             STDMENU1.PRG
+        Called from    MIA         
+        Uses           STDADD      
+                       STDEDIT     
+                       STDGRADD    
+                       STDLOOK     
+                       STDREINS    
+                       STDSUSP     
+       
+       
+       
+      Program/procedure name  STDMENU2    
+        Source in             STDMENU2.PRG
+        Called from    TWIN        
+        Uses           ACCDISP1    
+                       STDCOMN1    
+                       STDEDIT1    
+                       STDLECT     
+                       STDREIN1    
+                       STDSUSP1    
+       
+       
+       
+27/04/00                        ET's program                        page 52
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  STDNAMLB    
+        Source in             STDNAMLB.PRG
+       
+       
+       
+      Program/procedure name  STDPMENU    
+        Source in             STDPMENU.PRG
+        Called from    SMIC        
+        Uses           MERGE       
+                       STDACTIV    
+                       STDAREAL    
+                       STDFIN      
+                       STDLIST     
+                       STDUNACT    
+       
+       
+       
+      Program/procedure name  STDREIN1    
+        Source in             STDREIN1.PRG
+        Called from    STDMENU2    
+        Uses           STD_PORT_V  
+       
+       
+       
+      Program/procedure name  STDREIN2    
+        Source in             STDREIN2.PRG
+        Called from    CHECKRUN    
+        Uses           REIN_STD    
+       
+       
+       
+      Program/procedure name  STDREINS    
+        Source in             STDREINS.PRG
+        Called from    STDMENU     
+                       STDMENU1    
+       
+       
+       
+      Program/procedure name  STDRESET    
+        Source in             STDRESET.PRG
+        Called from    CRS3        
+       
+       
+       
+27/04/00                        ET's program                        page 53
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  STDSPECL    
+        Source in             STDSPECL.PRG
+        Uses           SIMHEAD     
+       
+       
+       
+      Program/procedure name  STDSTAFF    
+        Source in             STDSTAFF.PRG
+       
+       
+       
+      Program/procedure name  STDSTART    
+        Source in             STDSTART.PRG
+        Called from    CRS3        
+       
+       
+       
+      Program/procedure name  STDSUSP     
+        Source in             STDSUSP.PRG 
+        Called from    STDMENU     
+                       STDMENU1    
+       
+       
+       
+      Program/procedure name  STDSUSP1    
+        Source in             STDSUSP1.PRG
+        Called from    STDMENU2    
+       
+       
+       
+      Program/procedure name  STDTEMP     
+        Source in             STDTEMP.PRG 
+        Uses           PR_PROC     
+       
+       
+       
+      Program/procedure name  STDTVLLB    
+        Source in             STDTVLLB.PRG
+        Uses           SIMHEAD     
+       
+       
+       
+27/04/00                        ET's program                        page 54
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  STDUNACT    
+        Source in             STDUNACT.PRG
+        Called from    STDPMENU    
+       
+       
+       
+      Program/procedure name  STDUNPD     
+        Source in             STDUNPD.PRG 
+        Called from    STDMENU     
+       
+       
+       
+      Program/procedure name  STDWEEK     
+        Description :                                       
+        Source in             STDWEEK.PRG 
+        Called from    CRS3        
+       
+        With this program you can increase the time a student will be on TWIN
+        for whatever reason.                                                 
+       
+       
+      Program/procedure name  STD_PORT_V  
+        Source in             STDREIN1.PRG
+        Called from    STDREIN1    
+       
+       
+       
+      Program/procedure name  STD_V01     
+        Source in             STDADD.PRG  
+        Called from    STDADD      
+                       STDEDIT     
+       
+       
+       
+      Program/procedure name  STD_V02     
+        Source in             STDADD.PRG  
+        Called from    STDADD      
+                       STDEDIT     
+       
+       
+       
+      Program/procedure name  STD_V03     
+        Source in             STDADD.PRG  
+        Called from    STDADD      
+                       STDEDIT     
+       
+       
+       
+27/04/00                        ET's program                        page 55
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  STD_V04     
+        Source in             STDADD.PRG  
+        Called from    STDADD      
+                       STDEDIT     
+       
+       
+       
+      Program/procedure name  STD_V05     
+        Source in             STDADD.PRG  
+        Called from    STDADD      
+                       STDEDIT     
+       
+       
+       
+      Program/procedure name  STD_V06     
+        Source in             STDADD.PRG  
+        Called from    STDADD      
+                       STDEDIT     
+       
+       
+       
+      Program/procedure name  STR_COM     
+        Source in             HED_UPD.PRG 
+        Called from    HED_UPD     
+                       NEW_SECTOR  
+       
+       
+       
+      Program/procedure name  STUDENT     
+        Source in             STUDENT.PRG 
+       
+       
+       
+      Program/procedure name  SYSMENU     
+        Source in             SYSMENU.PRG 
+       
+       
+       
+      Program/procedure name  SYSPARAM    
+        Source in             SYSPARAM.PRG
+        Called from    ETADMIN     
+        Uses           PRM_DO_EDI  
+                       PR_CH       
+       
+       
+       
+27/04/00                        ET's program                        page 56
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  TEST        
+        Source in             TEST.PRG    
+       
+       
+       
+      Program/procedure name  TESTPRN     
+        Source in             TESTPRN.PRG 
+       
+       
+       
+      Program/procedure name  TO_DO       
+        Source in             TO_DO.PRG   
+        Uses           DBCREATEIN  
+                       HITBOTTOM   
+                       STABILIZE   
+       
+       
+       
+      Program/procedure name  TO_DO_PRIN  
+        Source in             TO_DO.PRG   
+       
+       
+       
+      Program/procedure name  TRNBUY      
+        Source in             TRNBUY.PRG  
+        Called from    TWIN        
+        Uses           BUY_ORDER   
+       
+       
+       
+      Program/procedure name  TRNDISP     
+        Source in             TRNDISP.PRG 
+        Called from    TRNLOOK     
+                       TWIN        
+        Uses           PRNPORT     
+       
+       
+       
+      Program/procedure name  TRNEDIT     
+        Source in             TRNEDIT.PRG 
+        Called from    OTHTRNMN    
+       
+       
+       
+27/04/00                        ET's program                        page 57
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  TRNLOOK     
+        Description :                                       
+        Source in             TRNLOOK.PRG 
+        Called from    ENQMENU     
+        Uses           TRNDISP     
+       
+        This program will display the current portfolio of a student so that 
+        you can see how they are doing.                                      
+                                                                             
+                                                                             
+                                                                             
+       
+       
+      Program/procedure name  TRNNPL      
+        Source in             TRNNPL.PRG  
+        Called from    CRS1        
+       
+       
+       
+      Program/procedure name  TRNNPLAB    
+        Description :                                       
+        Source in             TRNNPLAB.PRG
+        Called from    CHECKRUN    
+       
+        This program will delete the specified NPL from the students         
+        portfolios, i.e. they will lose any value the NPL's might have had.  
+                                                                             
+                                                                             
+                                                                             
+       
+       
+      Program/procedure name  TRNNPLEX    
+        Source in             TRNNPLEX.PRG
+        Called from    OTHTRNMN    
+                       TRNSUBMN    
+       
+       
+       
+      Program/procedure name  TRNOLD      
+        Source in             TRNOLD.PRG  
+        Called from    DATAMENU    
+       
+       
+       
+27/04/00                        ET's program                        page 58
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  TRNORDER    
+        Source in             TRNORDER.PRG
+        Called from    CHECKRUN    
+       
+       
+       
+      Program/procedure name  TRNPAS      
+        Source in             TRNPAS.PRG  
+        Called from    TWIN        
+       
+       
+       
+      Program/procedure name  TRNSELL     
+        Source in             TRNSELL.PRG 
+        Called from    TWIN        
+        Uses           SELL_ORDER  
+       
+       
+       
+      Program/procedure name  TRNSHRAB    
+        Description :                                       
+        Source in             TRNSHRAB.PRG
+        Called from    CRS1        
+       
+        This program will return the cost of holding a share to all students 
+        that hold the share e.g. if the share was delisted.                  
+       
+       
+      Program/procedure name  TRNSTOP     
+        Description :                                       
+        Source in             TRNSTOP.PRG 
+        Called from    CRS1        
+       
+        This program will stop or re-start the ability to do portfolio       
+        transactions. This would only be done just before the weekly print   
+        run so that the course manager can finish writing the comments. At   
+        the end of the print run trading will automatically be restarted.    
+       
+       
+      Program/procedure name  TRNSUBMN    
+        Source in             TRNSUBMN.PRG
+        Uses           BEARBUY     
+                       BEARSL      
+                       FUTDISP     
+                       FUTLONG     
+                       FUTSHORT    
+                       SIMHEAD     
+                       TRNNPLEX    
+       
+       
+       
+27/04/00                        ET's program                        page 59
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  TWIN        
+        Source in             TWIN.PRG    
+        Called from    SMIC        
+        Uses           BACKDISP    
+                       FUTUREMN    
+                       OTHTRNMN    
+                       SHRMENU     
+                       STDMENU2    
+                       TRNBUY      
+                       TRNDISP     
+                       TRNPAS      
+                       TRNSELL     
+                       TWNDISP     
+       
+       
+       
+      Program/procedure name  TWNDISP     
+        Source in             TWIN.PRG    
+        Called from    TWIN        
+       
+       
+       
+      Program/procedure name  UDF_EDIT    
+        Source in             QUESSIE.PRG 
+       
+       
+       
+      Program/procedure name  UNDEF_ERRO  
+        Source in             ERRORSYS.PRG
+       
+       
+       
+      Program/procedure name  UPGRADE     
+        Source in             UPGRADE.PRG 
+        Called from    CHECKRUN    
+                       HED_TEST    
+                       SMIC        
+       
+       
+       
+      Program/procedure name  VAL_ARC_NO  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+       
+       
+       
+27/04/00                        ET's program                        page 60
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  VAL_CALC_T  
+        Source in             FUTADD.PRG  
+        Called from    FUTADD      
+                       FUTEDIT     
+       
+       
+       
+      Program/procedure name  VAL_FUT_DT  
+        Source in             FUTADD.PRG  
+        Called from    FUTADD      
+       
+       
+       
+      Program/procedure name  VAL_FUT_NM  
+        Source in             FUTADD.PRG  
+        Called from    FUTADD      
+       
+       
+       
+      Program/procedure name  VAL_LD_DT_  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+       
+       
+       
+      Program/procedure name  VAL_LD_P_C  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+       
+       
+       
+      Program/procedure name  VAL_LD_RAC  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+       
+       
+       
+      Program/procedure name  VAL_LD_SEL  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+       
+       
+       
+27/04/00                        ET's program                        page 61
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  VAL_LD_SEX  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+       
+       
+       
+      Program/procedure name  VAL_LD_SRC  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+                       LDEDITB     
+       
+       
+       
+      Program/procedure name  VAL_LD_SUR  
+        Source in             LDADD.PRG   
+        Called from    LDADD       
+       
+       
+       
+      Program/procedure name  VAL_MARGIN  
+        Source in             FUTADD.PRG  
+        Called from    FUTADD      
+                       FUTEDIT     
+       
+       
+       
+      Program/procedure name  VAL_PAY_TY  
+        Source in             PRDEDIT.PRG 
+        Called from    PRD_EDIT    
+       
+       
+       
+      Program/procedure name  VAL_PERC_V  
+        Source in             FUTADD.PRG  
+        Called from    FUTADD      
+       
+       
+       
+      Program/procedure name  VAL_PRD_CO  
+        Source in             PRDEDIT.PRG 
+        Called from    PRDADD      
+       
+       
+       
+27/04/00                        ET's program                        page 62
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  VAL_PRD_TY  
+        Source in             PRDEDIT.PRG 
+        Called from    PRDADD      
+       
+       
+       
+      Program/procedure name  VAL_REP_LE  
+        Source in             REPEDIT.PRG 
+        Called from    REPEDIT     
+       
+       
+       
+      Program/procedure name  VAL_REP_ST  
+        Source in             REPEDIT.PRG 
+        Called from    REPEDIT     
+       
+       
+       
+      Program/procedure name  VAL_STDLEC  
+        Source in             STDLECT.PRG 
+        Called from    STDLECT     
+       
+       
+       
+      Program/procedure name  VATADD      
+        Source in             VATADD.PRG  
+       
+       
+       
+      Program/procedure name  VATLIST     
+        Source in             VATLIST.PRG 
+       
+       
+       
+      Program/procedure name  VATRPT      
+        Source in             VATRPT.PRG  
+        Called from    ACCMENU     
+       
+       
+       
+      Program/procedure name  WEEK        
+        Source in                         
+        Called from    LAB_X_AXIS  
+                       PORTPRNT    
+       
+       
+       
+27/04/00                        ET's program                        page 63
+ 
+                  ALPHABETIC LIST OF PROCEDURES AND FUNCTIONS
+ 
+      Program/procedure name  WKLYMENU    
+        Source in             WKLYMENU.PRG
+        Uses           FUTPRNT     
+                       PORTPRNT    
+                       SIMHEAD     
+       
+       
+       
+      Program/procedure name  WKSHRPRN    
+        Description :                                       
+        Source in             WKSHRPRN.PRG
+        Called from    CRS1        
+        Uses           SEEK_POSN   
+       
+        This will print out all shares that have transactions assosiated     
+        with them. Buy and sell transaction are flagged with an asterisk if  
+        they are out of date (4 weeks for technical and 4 months for         
+        fundamental comments) or if the price has changed by more than 8% in 
+        the previous week (technical comments only).                         
+       
+       
+      Program/procedure name  XYAXES      
+        Source in                         
+        Called from    PRICE_GRAP  
+       
+       
+       
+      Program/procedure name  XYGRAPH     
+        Source in                         
+        Called from    PRICE_GRAP  
+       
+       
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   ---   27/04/00   ---

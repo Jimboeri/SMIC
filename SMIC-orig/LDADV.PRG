@@ -1,0 +1,43 @@
+* Program 'LDADV'
+SELECT 1
+GO TOP
+@8,0 CLEAR
+IF MSOURCE_CD <> SPACE(3)
+  FIND &MSOURCE_CD
+  DO WHILE SOURCE_CD = MSOURCE_CD .AND. .NOT. EOF()
+    MADVCNT = 8
+    DO WHILE SOURCE_CD = MSOURCE_CD .AND. MADVCNT < 20 .AND. .NOT. EOF()
+      @MADVCNT,0 SAY SOURCE_CD + ' ' + DTOC(SOURCE_DT) + ' ' + LD_GEN + ' ' + DESCRIPTION
+      MADVCNT = MADVCNT + 1
+      SKIP
+    ENDDO
+    WAIT
+    @8,0 CLEAR
+  ENDDO
+ELSE
+  DO WHILE .NOT. EOF()
+    MADVCNT = 8
+    DO WHILE MADVCNT < 20 .AND. .NOT. EOF()
+      @MADVCNT,0 SAY SOURCE_CD + ' ' + DTOC(SOURCE_DT) + ' ' + LD_GEN + ' ' + DESCRIPTION
+      MADVCNT = MADVCNT + 1
+      SKIP
+    ENDDO
+    IF MADVCNT > 19
+      MEND = ' '
+      WAIT 'Any key to continue or 9 to end ' TO MEND
+      IF MEND = '9'
+        GO BOTTOM
+        SKIP
+      ENDIF
+    ELSE
+      WAIT
+    ENDIF
+    MADVCNT = 8
+    @8,0 CLEAR
+  ENDDO
+ENDIF
+SELECT 2
+
+RETURN
+
+*EOF

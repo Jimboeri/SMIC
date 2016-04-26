@@ -1,0 +1,139 @@
+*******************************************************************************
+*PROGRAM 'FINDFUT' - PROGRAM TO FIND A SPECIFIC FUTURE
+* Author - Jim West
+* 1/2/88
+LOCAL MSCR, FOUND_SHR, MCURRENT, MLOOK, MFUT_OPTN, MCHAR, MNME_TYPE, MINKEY
+MSCR = SAVESCREEN(7,1,22,79)
+DRAW_BOX(7,1,22,78)
+FOUND_SHR = .F.
+MCURRENT = CHR(255)
+MLOOK = CHR(255)
+MFUT_OPTN = ''
+MCHAR = ' '
+MNME_TYPE = 'S'
+DO WHILE .NOT. FOUND_SHR
+  @8,20 SAY SPACE(30)
+  @8,10 SAY 'ENTER FUTURE/OPTION ' + MFUT_OPTN
+  SET CONSOL OFF
+  WAIT '' TO MCHAR
+  SET CONSOL ON
+  MINKEY = LASTKEY()
+  DO CASE
+    CASE MINKEY = 27	&& ESCAPE
+      * ESCAPE
+      GO BOTTOM
+      SKIP
+      RESTSCREEN(7,1,22,79, MSCR)
+      RETURN
+    CASE MINKEY = 13	&& ENTER
+      IF MCURRENT = CHR(255)
+        FOUND_SHR = .T.
+        MFUT_OPTN = SPACE(9)
+      ELSE
+        IF MLOOK = CHR(255)
+          FOUND_SHR = .T.
+        ELSE
+          FOUND_SHR = .T.
+          MFUT_OPTN = FUT_OPTN
+          MLOOK = FUT_OPTN
+          @8,27 SAY FUT_OPTN
+        ENDIF
+      ENDIF
+    CASE MINKEY = 8	&& BACKSPACE
+      MFUT_OPTN = BKSPACE(MFUT_OPTN)
+      MLOOK = MFUT_OPTN
+    CASE MINKEY = 5	&& UP ARROW
+      @9,5 CLEAR TO 13,78
+      SKIP-1
+      MFUT_OPTN = ''
+      MCURRENT = FUT_OPTN
+      MLOOK = CHR(255)
+    CASE MINKEY = 18	&& PAGE UP
+      @9,5 CLEAR TO 13,78
+      SKIP-4
+      IF BOF()
+        GO TOP
+      ENDIF
+      MFUT_OPTN = ''
+      MCURRENT = FUT_OPTN
+      MLOOK = CHR(255)
+    CASE MINKEY = 24	&& DOWN ARROW
+      @17,5 CLEAR TO 21,78
+      SKIP
+      MFUT_OPTN = ''
+      MCURRENT = FUT_OPTN
+      MLOOK = CHR(255)
+    CASE MINKEY = 3	&& PAGE DOWN
+      @17,5 CLEAR TO 21,78
+      SKIP 4
+      IF EOF()
+        GO BOTTOM
+      ENDIF
+      MFUT_OPTN = ''
+      MCURRENT = FUT_OPTN
+      MLOOK = CHR(255)
+    OTHERWISE
+      MCHAR = UPPER(MCHAR)
+      MFUT_OPTN = MFUT_OPTN + MCHAR
+      MLOOK = MFUT_OPTN
+  ENDCASE
+  SAME_SHR = .F.
+  IF MLOOK = CHR(255)
+    SEEK MCURRENT
+  ELSE
+    SEEK MLOOK
+    IF EOF()
+      MLOOK = BKSPACE(MLOOK)
+      MFUT_OPTN = MLOOK
+      GO TOP
+      SEEK MLOOK
+    ENDIF
+    IF MCURRENT = FUT_OPTN
+      SAME_SHR = .T.
+    ENDIF
+    MCURRENT = FUT_OPTN
+  ENDIF
+  NUM = 1
+  @14,3 TO 16,75
+  @15,5 SAY SPACE(69)
+  @15,5 SAY FUT_OPTN + '  ' + DTOC(EXP_DATE) + '  ' + TRIM(FULL_NAME)
+  IF .NOT. EOF()
+    SKIP
+  ENDIF
+  IF MLOOK <> CHR(255)
+    IF FUT_OPTN <> MLOOK
+      FOUND_SHR = .T.
+      NUM = 10
+    ENDIF
+  ENDIF
+  GO TOP
+  SEEK MCURRENT
+  IF .NOT. FOUND_SHR .AND. .NOT. SAME_SHR
+    SKIP
+    DO WHILE NUM < 4 .AND. .NOT. EOF()
+      NUM++
+      @15+NUM,5 SAY SPACE(72)
+      @15+NUM,5 SAY FUT_OPTN + '  ' + DTOC(EXP_DATE) + '  ' + TRIM(FULL_NAME)
+      SKIP
+    ENDDO
+    GO TOP
+    SEEK MCURRENT
+    IF NUM < 10
+      NUM = 1
+      SKIP-1
+    ENDIF
+    DO WHILE NUM < 4 .AND. .NOT. BOF()
+      NUM++
+      @15-NUM,5 SAY SPACE(72)
+      @15-NUM,5 SAY FUT_OPTN + '  ' + DTOC(EXP_DATE) + '  ' + TRIM(FULL_NAME)
+      SKIP-1
+    ENDDO
+    GO TOP
+    SEEK MCURRENT
+  ENDIF
+ENDDO
+RESTSCREEN(7,1,22,79, MSCR)
+CLEAR TYPEAHEAD
+RETURN
+
+*EOF

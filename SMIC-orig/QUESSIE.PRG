@@ -1,0 +1,87 @@
+*******************************************************************************
+*
+* QUESSIE - PROGRAM TO DISPLAY ANSWERS TO COMMON PROBLEMS
+* 7/91
+*
+
+LOCAL cOWNER, cPAGE, lFINISH, cMEMO, cHEAD, nMAX, nCNT, nRECNO
+PRIVATE aMEMBER[0], aPAGE[0]
+cOWNER = SPACE(5)
+lFINISH = .F.
+
+IF !NET_USE('QUESSIE', .F., 'QU', 'OWNER', 'PAGE')
+  RETURN
+ENDIF
+
+SEEK cOWNER
+
+DO WHILE !lFINISH
+  cOWNER = OWNER
+  cPAGE = PAGE
+  cHEAD = HEADING
+  cMEMO = TRIM(TEXT_1 + TEXT_2)
+  nRECNO = RECNO()
+  ASIZE(aPAGE, 0)
+  ASIZE(aMEMBER, 0)
+  nMAX = 0
+  SEEK cPAGE
+  DO WHILE cPAGE = OWNER .AND. !EOF()
+    nMAX++
+    AADD(aPAGE, PAGE)
+    AADD(aMEMBER, HEADING)
+    SKIP
+  ENDDO
+  GOTO nRECNO
+  SIMHEAD(PSCR_TITLE)
+  @2,0 CLEAR
+  IF nMAX > 0
+    @17,18 CLEAR TO 23,72
+    @17,18 TO 23,72
+    FOR nCNT = 1 TO 5
+      @17+nCNT,20 SAY aMEMBER[nCNT]
+      IF nCNT = nMAX
+        EXIT
+      ENDIF
+    NEXT
+  ENDIF
+  @2,20 SAY cHEAD
+  @3,1 CLEAR TO 16,79
+  @3,1 TO 16,79
+  cMEMO = MEMOEDIT(cMEMO, 4,2,15,78,.F., 'UDF_EDIT')
+  IF LASTKEY() = 27
+    IF OWNER = '     '
+      IF MAKE_SURE(,,'RETURN TO DOS ?')
+        lFINISH = .T.
+      ENDIF
+    ELSE
+      SET ORDER TO 2
+      SEEK cOWNER
+      SET ORDER TO 1
+    ENDIF
+  ELSE
+    nCNT = ACHOICE(18, 20, 22, 70, aMEMBER, .T.)
+    IF nCNT != 0
+      SET ORDER TO 2
+      SEEK aPAGE[nCNT]
+      SET ORDER TO 1
+    ENDIF
+  ENDIF
+ENDDO
+
+CLOSE DATABASES
+RETURN
+
+* EOF
+
+*******************************************************************************
+FUNCTION UDF_EDIT (nMODE, nLINE, nCOL)
+IF nMODE = 1 .Or. nMODE = 3
+  RETURN(0)
+ENDIF
+IF LASTKEY() = 24
+  RETURN(23)
+ELSE
+  RETURN(0)
+ENDIF
+RETURN
+*EOF

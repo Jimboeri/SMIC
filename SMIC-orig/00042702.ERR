@@ -1,0 +1,6 @@
+
+Error BASE/1003  Variable does not exist: SECTOR
+Called from PRCEXTR(192)  
+Called from SHRMENU(21)  
+Called from TWIN(188)  
+Called from SMIC(88)  

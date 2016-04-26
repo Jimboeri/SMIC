@@ -1,0 +1,37 @@
+238K available
+Compiling TWIN.PRG
+Compiling TRNBUY.PRG
+Compiling TRNPAS.PRG
+Compiling TRNSELL.PRG
+Compiling TRNDISP.PRG
+Compiling OTHTRNMN.PRG
+Compiling FUTUREMN.PRG
+Compiling STDMENU2.PRG
+Compiling SHRMENU.PRG
+Compiling BEARSL.PRG
+Compiling BEARBUY.PRG
+Compiling TRNNPLEX.PRG
+Compiling ORDEDIT.PRG
+Compiling TRNEDIT.PRG
+Compiling PREBUY.PRG
+Compiling PRESELL.PRG
+Compiling FUTLONG.PRG
+Compiling FUTSHORT.PRG
+Compiling FUTDISP.PRG
+Compiling STDEDIT1.PRG
+Compiling STDSUSP1.PRG
+Compiling STDREIN1.PRG
+Compiling STDCOMN1.PRG
+Compiling ACCDISP1.PRG
+Compiling STDLECT.PRG
+Compiling SHRLOOK.PRG
+Compiling SHRDIV.PRG
+Compiling PRCEXTR.PRG
+Code size 45015, Symbols 10464, Constants 16857
+.RTLink for Clipper  Dynamic Overlay Linker / Pre-Linker  Version 3.14B
+(C) Copyright Pocket Soft Inc., 1988-1991.  All Rights Reserved.
+
+=> FILE SMIC, __wait_b, enqmenu, prntmenu, etadmin, repmenu, datamenu, accmenu,
+=> accsubmn, stdmenu, ldmenu, medmenu, advmenu, stdpmenu, crs1, crs3,
+=> ctus, twin LIB proced, ct=> 
+342K

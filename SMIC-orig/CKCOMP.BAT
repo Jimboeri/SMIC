@@ -1,0 +1,2 @@
+rmake checkrun.mak
+

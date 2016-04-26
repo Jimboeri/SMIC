@@ -1,0 +1,112 @@
+
+00034   SMIC          REF 01/01/91      01133   SMIC          REF 01/01/92      
+
+MR J BLOGGS                             MR H BROWN                              
+R                                       P.O. BOX                                
+R                                       120                                     
+2222 R                                  4323 HENDRINA                           
+Phone H 222222222           Occ 34      Phone H 223432              Occ 22      
+Phone W 2                               Phone W 432                             
+
+
+
+22133   SMIC          REF 01/01/88      00004   SMIC          RDI 08/07/90      
+
+MR T DYER                               MR T GORDON                             
+                                                                                
+                                                                                
+7777                                    2222                                    
+Phone H 4235                Occ 82      Phone H                     Occ 22      
+Phone W 5342                            Phone W                                 
+
+
+
+00002   SMIC          BUD 01/06/88      00232   SMIC          JIM 01/01/93      
+
+MR T GRUNT                              MR T  HAGGIE                            
+                                        R                                       
+                                        R                                       
+9999                                    2222 R                                  
+Phone H                     Occ 32      Phone H 342432              Occ 22      
+Phone W                                 Phone W 342342                          
+
+
+
+00017   SMIC          RDI 08/07/90      00010   SMIC          RDI 08/07/90      
+
+MR T HARRY                              MR T HHHH                               
+                                        F                                       
+                                                                                
+9999                                    2222                                    
+Phone H                     Occ         Phone H                     Occ 34      
+Phone W                                 Phone W                                 
+
+
+
+00027   SMIC          RDI 08/07/90      00003   SMIC          RDI 08/07/90      
+
+MR T KERRY                              MR C LLOYD                              
+                                        E                                       
+                                        E                                       
+8888                                    2222 E                                  
+Phone H                     Occ 54      Phone H                     Occ 04      
+Phone W                                 Phone W                                 
+
+
+
+00011   SMIC          RDI 08/07/90      10001   SMIC          REF 01/01/92      
+
+MR P LOGAN                              MISS G MAUCHAN                          
+                                                                                
+                                                                                
+2222                                    0000 AUSTRALIA                          
+Phone H                     Occ 34      Phone H 321987321897634     Occ 82      
+Phone W                                 Phone W 12                              
+
+
+
+00233   SMIC          JIM 01/01/93      00005   SMIC          RDI 08/07/90      
+
+MISS K POULTON                          MR M PROCOS                             
+R                                                                               
+R                                                                               
+4323 R                                  2222                                    
+Phone H 42234423            Occ 32      Phone H                     Occ 66      
+Phone W 342                             Phone W                                 
+
+
+
+00014   SMIC          REF 01/01/88      08833   SMIC          REF 01/01/92      
+
+MR T WALSH                              MR A WRIGHT                             
+JKWEHDHJQWEB                            P                                       
+E                                       P                                       
+6666 2D3234232                          9999 P                                  
+Phone H 21978043            Occ 18      Phone H 9999                Occ 32      
+Phone W 4231                            Phone W 99999                           
+
+
+
+88111   SMIC          REF 01/01/92      00033   SMIC          REF 01/01/91      
+
+MR D YOUNG                              MR J YOUNG                              
+M&F                                     R                                       
+                                        R                                       
+2000                                    2222 R                                  
+Phone H 4235543             Occ 22      Phone H 2222222             Occ 18      
+Phone W 534543453                       Phone W 222222                          
+
+
+
+00001   SMIC          BUD 01/06/88      
+
+MR T YOUNG                              
+                                        
+                                        
+8888                                    
+Phone H 453                 Occ 82      
+Phone W 4352                            
+
+
+
+                   ---   06/06/96   ---

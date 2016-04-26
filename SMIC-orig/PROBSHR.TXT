@@ -1,0 +1,3 @@
+
+The following are a list of shares the system cannot delete
+ 

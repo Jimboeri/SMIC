@@ -1,0 +1,5 @@
+
+Error BASE/1003  Variable does not exist: LPRN_SCR
+Called from PR_LINE(1036)  
+Called from PRNTITLE(1114)  
+Called from PORTPRNT(302)  

@@ -1,0 +1,8 @@
+graph.obj:      graph.prg
+                clipper graph /w/b
+
+dataview.obj:   dataview.prg
+                clipper dataview /w/b
+
+graph.exe:      graph.obj
+                rtlink fi graph, ctus, dataview, dgevga lib proced, ct, dge

@@ -1,0 +1,8 @@
+*.prg
+*.bat
+*.mak
+*.rmk
+*.ch
+*.lnk
+*.db?
+

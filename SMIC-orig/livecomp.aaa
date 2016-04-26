@@ -1,0 +1,181 @@
+316K available
+Compiling SMIC.PRG
+Compiling UPGRADE.PRG
+Compiling NOTES.PRG
+Code size 7781, Symbols 3264, Constants 2347
+316K available
+Compiling ENQMENU.PRG
+Compiling LDLOOK.PRG
+Compiling STDLOOK.PRG
+Compiling ACCDISP.PRG
+Compiling TRNLOOK.PRG
+Compiling SMICLAB.PRG
+Code size 5569, Symbols 2368, Constants 2639
+316K available
+Compiling PRNTMENU.PRG
+Compiling RLEADS.PRG
+Compiling REPRATIO.PRG
+Compiling PFOLLDT.PRG
+Compiling RSALES.PRG
+Compiling LDLAB.PRG
+Compiling REPSTAT.PRG
+Compiling LDPRLAB.PRG
+Code size 15812, Symbols 3728, Constants 6588
+316K available
+Compiling ETADMIN.PRG
+Compiling RE_INDEX.PRG
+Compiling SECMENU.PRG
+Compiling FUTMENU.PRG
+Compiling SYSPARAM.PRG
+Compiling SHR_DUP.PRG
+Compiling SECEDIT.PRG
+Compiling SECDELET.PRG
+Compiling SECDISP.PRG
+Compiling SECPRNT.PRG
+Compiling FUTADD.PRG
+Compiling FUTEDIT.PRG
+Compiling FUTDELET.PRG
+Compiling PR_CH.PRG
+Code size 14306, Symbols 5120, Constants 5070
+316K available
+Compiling REPMENU.PRG
+Compiling REPADD.PRG
+Compiling REPEDIT.PRG
+Code size 1815, Symbols 816, Constants 553
+316K available
+Compiling DATAMENU.PRG
+Compiling LDOLD.PRG
+Compiling FINMOVE.PRG
+Compiling TRNOLD.PRG
+Code size 4826, Symbols 2208, Constants 2310
+316K available
+Compiling ACCMENU.PRG
+Compiling ACCREPBK.PRG
+Compiling ACCCOMM.PRG
+Compiling ACCSTD.PRG
+Compiling ACCBANK.PRG
+Compiling ACCUNPD.PRG
+Compiling ACCSTAT.PRG
+Compiling VATRPT.PRG
+Compiling DEBITACC.PRG
+Code size 12566, Symbols 3184, Constants 6538
+316K available
+Compiling ACCSUBMN.PRG
+Compiling ACCCHANG.PRG
+Compiling ACCUPBNK.PRG
+Compiling ACCDEPOS.PRG
+Compiling ACCTODEB.PRG
+Compiling ACCDEBIT.PRG
+Compiling ACCDEBPR.PRG
+Compiling ACCREF.PRG
+Code size 19235, Symbols 3536, Constants 6733
+316K available
+Compiling STDMENU.PRG
+Compiling STDADD.PRG
+Compiling STDEDIT.PRG
+Compiling STDEXPL.PRG
+Compiling STDSUSP.PRG
+Compiling STDUNPD.PRG
+Compiling STDREINS.PRG
+Compiling STDCOMNT.PRG
+Code size 23239, Symbols 4400, Constants 8009
+316K available
+Compiling LDMENU.PRG
+Compiling LDADD.PRG
+Compiling LDEDIT.PRG
+Compiling LDDISP.PRG
+Compiling LDREP.PRG
+Compiling LDREMOVE.PRG
+Code size 13172, Symbols 3312, Constants 4892
+316K available
+Compiling MEDMENU.PRG
+Compiling MEDSTAT.PRG
+Compiling MEDSTAT1.PRG
+Compiling MEDAREAS.PRG
+Compiling MEDANAL.PRG
+Compiling MEDSALES.PRG
+Compiling MEDLAB.PRG
+Compiling MEDRDIG.PRG
+Code size 22936, Symbols 4496, Constants 9144
+316K available
+Compiling ADVMENU.PRG
+Compiling ADVADD.PRG
+Compiling ADVEDIT.PRG
+Compiling ADVDELET.PRG
+Compiling ADVDISP.PRG
+Compiling ADVNCOST.PRG
+Compiling ADVLIST.PRG
+Compiling ADVCHANG.PRG
+Code size 5227, Symbols 1888, Constants 2709
+316K available
+Compiling TWIN.PRG
+Compiling TRNBUY.PRG
+Compiling TRNPAS.PRG
+Compiling TRNSELL.PRG
+Compiling TRNDISP.PRG
+Compiling OTHTRNMN.PRG
+Compiling FUTUREMN.PRG
+Compiling STDMENU2.PRG
+Compiling SHRMENU.PRG
+Compiling BEARSL.PRG
+Compiling BEARBUY.PRG
+Compiling TRNNPLEX.PRG
+Compiling ORDEDIT.PRG
+Compiling TRNEDIT.PRG
+Compiling PREBUY.PRG
+Compiling PRESELL.PRG
+Compiling FUTLONG.PRG
+Compiling FUTSHORT.PRG
+Compiling FUTDISP.PRG
+Compiling STDEDIT1.PRG
+Compiling STDSUSP1.PRG
+Compiling STDREIN1.PRG
+Compiling STDCOMN1.PRG
+Compiling ACCDISP1.PRG
+Compiling STDLECT.PRG
+Compiling SHRLOOK.PRG
+Compiling SHRDIV.PRG
+Compiling PRCEXTR.PRG
+Code size 45581, Symbols 10592, Constants 16899
+316K available
+Compiling STDPMENU.PRG
+Compiling STDAREAL.PRG
+Compiling STDUNACT.PRG
+Compiling STDACTIV.PRG
+Compiling STDLIST.PRG
+Compiling STDFIN.PRG
+Compiling MERGE.PRG
+Code size 8723, Symbols 2624, Constants 3949
+316K available
+Compiling CRS1.PRG
+Compiling SHREDIT.PRG
+Compiling WKSHRPRN.PRG
+Compiling SHRDELET.PRG
+Compiling SHRSPLIT.PRG
+Compiling SHRCONS.PRG
+Compiling TRNNPL.PRG
+Compiling SHRALLOC.PRG
+Compiling SHRMAN.PRG
+Compiling SHRHOLD.PRG
+Compiling TRNSHRAB.PRG
+Compiling TRNSTOP.PRG
+Compiling MSG_DISP.PRG
+Compiling SHRCHANG.PRG
+Compiling SHR_EXP.PRG
+Code size 18432, Symbols 5760, Constants 7856
+316K available
+Compiling CRS3.PRG
+Compiling STDCLASS.PRG
+Compiling STDCASH.PRG
+Compiling STDWEEK.PRG
+Compiling STDRESET.PRG
+Compiling STDCOUNT.PRG
+Compiling STDSTART.PRG
+Code size 5040, Symbols 2160, Constants 3392
+.RTLink for Clipper  Dynamic Overlay Linker / Pre-Linker  Version 3.14B
+(C) Copyright Pocket Soft Inc., 1988-1991.  All Rights Reserved.
+
+=> FILE SMIC, enqmenu, prntmenu, etadmin, repmenu, datamenu, accmenu,
+=> accsubmn, stdmenu, ldmenu, medmenu, advmenu, stdpmenu, crs1, crs3,
+=> ctus, twin LIB proced, ct=> 
+341K

@@ -1,0 +1,47 @@
+*******************************************************************************
+* Program 'STDDISP'
+
+IF .NOT. NET_USE('STUDENT', .F., 'STD', 'NAMES')
+  RETURN
+ENDIF
+
+SIMHEAD(PSCR_TITLE)
+STORE SPACE(20) TO SUR_NAM 
+@3,0 CLEAR
+@4,0 SAY 'OR RETURN TO EXIT'
+@3,0 SAY 'ENTER SURNAME TO SEARCH FOR ' GET SUR_NAM PICTURE '!!!!!!!!!!!!!!!!!!!!'
+READ
+@3,29 SAY SUR_NAM
+DO WHILE SUR_NAM <> '   '
+  SUR_NAM = TRIM(SUR_NAM)
+  SEEK SUR_NAM
+  IF EOF()
+    @14,17 SAY 'NAME DOES NOT EXIST  -   ' + SUR_NAM
+    INKEY(10)
+  ELSE
+    DO WHILE SURNAME=SUR_NAM
+      @5,0 CLEAR
+      LIST NEXT 16 STD_CODE,SURNAME,NAME FOR SURNAME=SUR_NAM
+      @22,0 CLEAR
+      IF SURNAME = SUR_NAM
+        TEMP = ' '
+        ACCEPT 'HIT "ENTER" TO CONTINUE LIST, OR 9 TO EXIT ' TO TEMP
+        IF TEMP = '9'
+          SUR_NAM = '@#@#@#@'
+        ENDIF
+      ELSE
+        ? '  *****  END OF LIST  ******'
+        WAIT
+      ENDIF (SURNAME = SUR_NAM)
+    ENDDO (SURNAME = SUR_NAM)
+  ENDIF (EOF())
+  STORE SPACE(20) TO SUR_NAM 
+  @3,0 CLEAR
+  @4,0 SAY 'OR RETURN TO EXIT'
+  @3,0 SAY 'ENTER SURNAME TO SEARCH FOR ' GET SUR_NAM PICTURE '!!!!!!!!!!!!!!!!!!!!'
+  READ
+  @3,29 SAY SUR_NAM
+ENDDO (SUR_NAM <> '')
+CLOSE DATABASE
+RETURN
+* EOF

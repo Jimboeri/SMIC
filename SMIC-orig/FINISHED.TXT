@@ -1,0 +1,57 @@
+
+        MR H KERRY                         
+ 
+ 
+        W                           Phone (W) 8768756        
+        W                           Phone (H) 987987         
+        2222 W                        
+ 
+        07/10/91   Rep JB
+        07/10/91   SM  J1
+          /  /     NSM J1
+          /  /  
+        Sim length 51                Wk unact   0
+ 
+                                                  Account no 03327
+                                                  Date 21/04/96
+--------------------------------------------------------------------------------
+ 
+15/10/91 D   Payment for Stock Market Investors Course                                  500.00
+15/10/91 D   Payment received                                                                              500.00
+31/10/91 D   Payment for Stock Market Investors Course                                  200.00
+30/11/91 D   Payment for Stock Market Investors Course                                  200.00
+31/12/91 D   Payment for Stock Market Investors Course                                  200.00
+01/01/92 D   Payment received                                                                              200.00
+01/01/92 D   Payment received                                                                              200.00
+01/01/92 D   Payment received                                                                              200.00
+31/01/92 D   Payment for Stock Market Investors Course                                  200.00
+01/02/92 D   Payment received                                                                              200.00
+28/02/92 D   Payment for Stock Market Investors Course                                  200.00
+01/03/92 D   Payment received                                                                              200.00
+31/03/92 D   Payment for Stock Market Investors Course                                  200.00
+01/04/92 D   Payment received                                                                              200.00
+30/04/92 D   Payment for Stock Market Investors Course                                  200.00
+01/05/92 D   Payment received                                                                              200.00
+31/05/92 D   Payment for Stock Market Investors Course                                  200.00
+01/06/92 D   Payment received                                                                              200.00
+30/06/92 D   Payment for Stock Market Investors Course                                  200.00
+31/07/92 D   Payment for Stock Market Investors Course                                  200.00
+23/04/93 D   Payment received                                                                              200.00
+24/04/93 D   Payment received                                                                              200.00
+--------------------------------------------------------------------------------
+Totals                                                                                 2500.00            2500.00
+
+PORTFOLIO MR HAROLD KERRY                         
+ 
+             NO OF        COST OF   AVERAGE   CURRENT     CURRENT        %    
+SHARE       SHARES        HOLDING    PRICE     PRICE       VALUE       PROFIT
+--------------------------------------------------------------------------------
+DE-BEERS       100        8297.35     82.97     94.00     9287.60       11.93
+KNIGHTS      25678           0.00      0.00      0.31     7860.02
+ 
+--------------------------------------------------------------------------------
+SHARES         Cost   8297.35            Current value  17147.62       106.66
+PORTFOLIO      Cash  50173.45            Total value    67321.07       -55.12
+ 
+Value when finished     64806.84
+

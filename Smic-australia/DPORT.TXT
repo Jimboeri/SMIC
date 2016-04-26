@@ -1,0 +1,66 @@
+
+LEC 1    LEC 2    LEC 3    
+ 
+                                                                 R S A
+                                                             POSTAGE PAID
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+         MR P STILL                                                       
+         R                        
+         R                        
+         R                        
+         3243
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     From Stock Market Investors' Club
+     P.O.Box 72461            
+     Parkview                 
+     2122 Jhb                      
+ 
+     Telephone 402 3905
+29/04/00                        ET's program                        page 1
+ 
+Error BASE/1003  Variable does not exist: LPRN_SCR
+Called from PR_LINE(1036)  
+Called from PRNTITLE(1114)  
+Called from PORTPRNT(302)  

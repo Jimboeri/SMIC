@@ -1,0 +1,533 @@
+*******************************************************************************
+* BELDIV - CREATES TEXT FILE TO UPLOAD DIVIDENDS
+*******************************************************************************
+
+SIMHEAD('FINTEL Dividend generator')
+
+IF TYPE('FM_INX') = 'U'
+  PRIVATE FM_INX, FILE_MSG[20]
+  FM_INX = 0
+ENDIF
+
+SELECT 2
+IF .NOT. NET_USE('SECTORS', .F., 'SEC', 'SECTORS')
+  RETURN
+ENDIF
+
+SELECT 1
+IF .NOT. NET_USE('SHRDESCR', .T.)
+  CLOSE DATABASES
+  RETURN
+ENDIF
+
+@5,20 SAY 'INDEXING SHRDESCR FILE'
+INDEX ON SEC_CD + SHARE TO SHRTEMP
+
+@8,20 SAY 'GENERATING MENUS'
+DO WHILE SEC_CD < ' 02'
+  SKIP
+ENDDO
+
+SHRHANDLE = FCREATE('DIVIDEND.BT',0)
+IF FERROR() <> 0
+  @23,10 SAY 'Error opening file , DOS error = ' + STR(FERROR())
+  INKEY(5)
+  RETURN
+ENDIF
+
+MSTART_PAGE = 600
+MNO_PAGES = 0
+MCOUNT = 4
+
+DECLARE ALINE[22]
+
+ALINE[1] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'M' + CHR(27) + 'C' + 'MINING & FINANCIAL DIVIDENDS'
+ALINE[2] = ' '
+ALINE[3] = ' '
+FOR MCOUNT = 4 TO 21
+  IF (INT(MCOUNT/2) * 2) = MCOUNT
+    ALINE[MCOUNT] = CHR(27) + 'B'
+  ELSE
+    ALINE[MCOUNT] = ' '
+  ENDIF
+NEXT
+ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key choice or 0 to return'
+MCOUNT = 4
+
+DO WHILE SEC_CD < ' 50' .AND. .NOT. EOF()
+  MNO_SHARES = 0
+  MSEC_CD = SEC_CD
+  DO WHILE SEC_CD = MSEC_CD .AND. .NOT. EOF()
+    IF DTOC(INT_DIV_DT) <> '  /  /  ' .OR. DTOC(FIN_DIV_DT) <> '  /  /  '
+      MNO_SHARES = MNO_SHARES + 1
+    ENDIF
+    SKIP
+  ENDDO
+  IF MNO_SHARES > 0
+    SELECT 2
+    SEEK MSEC_CD
+    IF FOUND()
+      MSEC_NM = SHORT_NAME
+    ELSE
+      MSEC_NM = SPACE(9)
+    ENDIF
+    SELECT 1
+    DO WHILE MNO_SHARES > 0
+      MNO_PAGES = MNO_PAGES + 1
+      ALINE[MCOUNT] = ALINE[MCOUNT] + STR((9+MNO_PAGES),2,0) + ' ' + MSEC_NM + ' '
+      MCOUNT = MCOUNT + 1
+      IF MCOUNT > 21
+        MCOUNT = 4
+      ENDIF
+      MNO_SHARES = MNO_SHARES - 17
+    ENDDO
+  ENDIF
+ENDDO
+IF MNO_PAGES > 0
+  BTLINE = 0
+  MWLINE = '304860,a,1,1,0,86,i,d,y'
+  DO BELWRITE WITH SHRHANDLE, MWLINE
+  MWLINE = '$0,3048155'
+  DO BELWRITE WITH SHRHANDLE, MWLINE
+  FOR MCOUNT = 1 TO MNO_PAGES
+    MWLINE = '$' + STR((9+MCOUNT),2,0) + ',3048' + LTRIM(STR((599+MCOUNT)))
+    DO BELWRITE WITH SHRHANDLE, MWLINE
+  NEXT
+  FOR MCOUNT = 1 TO 22
+    MWLINE = ALINE[MCOUNT]
+    DO BELWRITE WITH SHRHANDLE, MWLINE
+  NEXT
+ENDIF  
+
+MFIN_PAGES = MNO_PAGES
+ALINE[1] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'M' + CHR(27) + 'C' + '    INDUSTRIAL DIVIDENDS'
+ALINE[2] = ' '
+ALINE[3] = ' '
+FOR MCOUNT = 4 TO 21
+  IF (INT(MCOUNT/2) * 2) = MCOUNT
+    ALINE[MCOUNT] = CHR(27) + 'B'
+  ELSE
+    ALINE[MCOUNT] = ' '
+  ENDIF
+NEXT
+ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key choice or 0 to return'
+MCOUNT = 4
+
+DO WHILE SEC_CD < '100' .AND. .NOT. EOF()
+  MNO_SHARES = 0
+  MSEC_CD = SEC_CD
+  DO WHILE SEC_CD = MSEC_CD .AND. .NOT. EOF()
+    IF DTOC(INT_DIV_DT) <> '  /  /  ' .OR. DTOC(FIN_DIV_DT) <> '  /  /  '
+      MNO_SHARES = MNO_SHARES + 1
+    ENDIF
+    SKIP
+  ENDDO
+  IF MNO_SHARES > 0
+    SELECT 2
+    SEEK MSEC_CD
+    IF FOUND()
+      MSEC_NM = SHORT_NAME
+    ELSE
+      MSEC_NM = SPACE(9)
+    ENDIF
+    SELECT 1
+    DO WHILE MNO_SHARES > 0
+      MNO_PAGES = MNO_PAGES + 1
+      ALINE[MCOUNT] = ALINE[MCOUNT] + STR((9+MNO_PAGES-MFIN_PAGES),2,0) + ' ' + MSEC_NM + ' '
+      MCOUNT = MCOUNT + 1
+      IF MCOUNT > 21
+        MCOUNT = 4
+      ENDIF
+      MNO_SHARES = MNO_SHARES - 17
+    ENDDO
+  ENDIF
+ENDDO
+IF MNO_PAGES > 0
+  BTLINE = 0
+  MWLINE = '304862,a,1,1,0,86,i,d,y'
+  DO BELWRITE WITH SHRHANDLE, MWLINE
+  MWLINE = '$0,3048155'
+  DO BELWRITE WITH SHRHANDLE, MWLINE
+  FOR MCOUNT = (MFIN_PAGES+1) TO MNO_PAGES
+    MWLINE = '$' + STR((9+MCOUNT-MFIN_PAGES),2,0) + ',3048' + LTRIM(STR((599+MCOUNT)))
+    DO BELWRITE WITH SHRHANDLE, MWLINE
+  NEXT
+  FOR MCOUNT = 1 TO 22
+    MWLINE = ALINE[MCOUNT]
+    DO BELWRITE WITH SHRHANDLE, MWLINE
+  NEXT
+ENDIF  
+MTOT_PAGES = MNO_PAGES + MFIN_PAGES
+
+* DIVIDEND PAGES
+@11,20 SAY 'GENERATING HISTORICAL DIVIDEND PAGES'
+MNO_PAGES = 0
+SELECT 1
+GO TOP
+DO WHILE SEC_CD < ' 02'
+  SKIP
+ENDDO
+
+DECLARE ASHARE[150]
+DECLARE AFIN_DIV[150]
+DECLARE AFIN_DT[150]
+DECLARE AINT_DIV[150]
+DECLARE AINT_DT[150]
+DECLARE ANX_SHR[250]
+DECLARE ANX_TYPE[250]
+DECLARE ANX_DIV[250]
+DECLARE ANX_DT[250]
+MNX_CNT = 0
+
+DO WHILE SEC_CD < '100' .AND. .NOT. EOF()
+  AFILL(AFIN_DT, CTOD('  /  /  '))
+  AFILL(AINT_DT, CTOD('  /  /  '))
+  MSEC_CD = SEC_CD
+  SELECT 2
+  SEEK MSEC_CD
+  IF FOUND()
+    MNAME = FULL_NAME
+  ELSE
+    MNAME = ' '
+  ENDIF
+  SELECT 1
+  MNO_SHARES = 0
+  DO WHILE SEC_CD = MSEC_CD .AND. .NOT. EOF()
+    IF DTOC(INT_DIV_DT) <> '  /  /  ' .OR. DTOC(FIN_DIV_DT) <> '  /  /  '
+      MNO_SHARES = MNO_SHARES + 1
+      ASHARE[MNO_SHARES] = SHARE
+      AFIN_DIV[MNO_SHARES] = FIN_DIV
+      AFIN_DT[MNO_SHARES] = FIN_DIV_DT
+      AINT_DIV[MNO_SHARES] = INT_DIV
+      AINT_DT[MNO_SHARES] = INT_DIV_DT
+    ENDIF
+    IF DTOC(DIV_DT) <> '  /  /  '
+      MNX_CNT = MNX_CNT + 1
+      ANX_SHR[MNX_CNT] = SHARE
+      ANX_TYPE[MNX_CNT] = DIV_TYPE
+      ANX_DIV[MNX_CNT] = DIVIDEND
+      ANX_DT[MNX_CNT] = DIV_DT
+    ENDIF
+    SKIP
+  ENDDO
+  DO WHILE MNO_SHARES > 0
+    IF MNO_SHARES < 8
+      ALINE[1] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + '    HISTORICAL DIVIDEND INFORMATION'
+      ALINE[2] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + MNAME
+      ALINE[3] = CHR(27) + 'A' + '        FINAL DIVIDENDS'
+      ALINE[4] = CHR(27) + 'F' + 'SHARE          L.D.R.      DIVIDEND(c)'
+      FOR MCOUNT = 5 TO 21
+        IF (INT(MCOUNT/2) * 2) = MCOUNT
+          ALINE[MCOUNT] = CHR(27) + 'C'
+        ELSE
+          ALINE[MCOUNT] = ' '
+        ENDIF
+      NEXT
+      MLINES = 0
+      FOR MCOUNT = 1 TO MNO_SHARES
+        IF DTOC(AFIN_DT[MCOUNT] ) <> '  /  /  '
+          MLINES = MLINES + 1
+          ALINE[MLINES+4] = ALINE[MLINES+4] + ASHARE[MCOUNT] + '     ' + DTOC(AFIN_DT[MCOUNT]) + '     ' + STR(AFIN_DIV[MCOUNT],8,2)
+        ENDIF
+      NEXT
+      ALINE[MLINES + 6] = CHR(27) + 'A' + '        INTERIM DIVIDENDS'
+      FOR MCOUNT = 1 TO MNO_SHARES
+        IF DTOC(AINT_DT[MCOUNT] ) <> '  /  /  '
+          MLINES = MLINES + 1
+          ALINE[MLINES+6] = ALINE[MLINES+6] + ASHARE[MCOUNT] + '     ' + DTOC(AINT_DT[MCOUNT]) + '     ' + STR(AINT_DIV[MCOUNT],8,2)
+        ENDIF
+      NEXT
+      BTLINE = 0
+      MNO_PAGES = MNO_PAGES + 1
+      MWLINE = '3048' + LTRIM(STR(599+MNO_PAGES)) + ',a,1,1,0,86,i,d,y'
+      DO BELWRITE WITH SHRHANDLE, MWLINE
+      IF MSEC_CD < ' 50'
+        MWLINE = '$0,304860'
+      ELSE
+        MWLINE = '$0,304862'
+      ENDIF
+      DO BELWRITE WITH SHRHANDLE, MWLINE
+      IF MNO_PAGES < MTOT_PAGES
+        ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key 0 to return or 1 for next'
+        MWLINE = '$1,3048' + LTRIM(STR(600+MNO_PAGES))
+        DO BELWRITE WITH SHRHANDLE, MWLINE
+      ELSE
+        ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key 0 to return'
+      ENDIF
+      FOR MCOUNT = 1 TO 22
+        MWLINE = ALINE[MCOUNT]
+        DO BELWRITE WITH SHRHANDLE, MWLINE
+      NEXT
+      MNO_SHARES = 0
+    ELSE
+      * FINAL DIVIDEND PAGE
+      ALINE[1] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + '    HISTORICAL DIVIDEND INFORMATION'
+      ALINE[2] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + MNAME
+      ALINE[3] = CHR(27) + 'A' + '        FINAL DIVIDENDS'
+      ALINE[4] = CHR(27) + 'F' + 'SHARE          L.D.R.      DIVIDEND(c)'
+      FOR MCOUNT = 5 TO 21
+        IF (INT(MCOUNT/2) * 2) = MCOUNT
+          ALINE[MCOUNT] = CHR(27) + 'C'
+        ELSE
+          ALINE[MCOUNT] = ' '
+        ENDIF
+      NEXT
+      MLINES = 0
+      MINTERIM = .F.
+      IF MNO_SHARES > 17
+        MDIVS = 17
+      ELSE
+        MDIVS = MNO_SHARES
+      ENDIF
+      FOR MCOUNT = 1 TO MDIVS
+        IF DTOC(AFIN_DT[MCOUNT] ) <> '  /  /  '
+          MLINES = MLINES + 1
+          ALINE[MLINES+4] = ALINE[MLINES+4] + ASHARE[MCOUNT] + '     ' + DTOC(AFIN_DT[MCOUNT]) + '     ' + STR(AFIN_DIV[MCOUNT],8,2)
+          MINTERIM = .T.
+        ENDIF
+      NEXT
+      BTLINE = 0
+      MNO_PAGES = MNO_PAGES + 1
+      MWLINE = '3048' + LTRIM(STR(599+MNO_PAGES)) + ',a,1,1,0,86,i,d,y'
+      DO BELWRITE WITH SHRHANDLE, MWLINE
+      IF MSEC_CD < ' 50'
+        MWLINE = '$0,304860'
+      ELSE
+        MWLINE = '$0,304862'
+      ENDIF
+      DO BELWRITE WITH SHRHANDLE, MWLINE
+      IF MINTERIM
+        MWLINE = '$9,3048' + LTRIM(STR(599+MNO_PAGES)) + '1'
+        DO BELWRITE WITH SHRHANDLE, MWLINE
+      ENDIF
+      IF MNO_PAGES < MTOT_PAGES
+        IF MINTERIM
+          ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + '0 return, 1 for next, 9 Interim divs'
+          MWLINE = '$1,3048' + LTRIM(STR(600+MNO_PAGES))
+          DO BELWRITE WITH SHRHANDLE, MWLINE
+        ELSE
+          ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key 0 to return or 1 for next'
+          MWLINE = '$1,3048' + LTRIM(STR(600+MNO_PAGES))
+          DO BELWRITE WITH SHRHANDLE, MWLINE
+        ENDIF
+      ELSE
+        ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key 0 to return'
+      ENDIF
+      FOR MCOUNT = 1 TO 22
+        MWLINE = ALINE[MCOUNT]
+        DO BELWRITE WITH SHRHANDLE, MWLINE
+      NEXT
+
+
+      * INTERIM DIVIDEND PAGE
+      IF MINTERIM
+        ALINE[1] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + '    HISTORICAL DIVIDEND INFORMATION'
+        ALINE[2] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + MNAME
+        ALINE[3] = CHR(27) + 'A' + '        INTERIM DIVIDENDS'
+        ALINE[4] = CHR(27) + 'F' + 'SHARE          L.D.R.      DIVIDEND(c)'
+        FOR MCOUNT = 5 TO 21
+          IF (INT(MCOUNT/2) * 2) = MCOUNT
+            ALINE[MCOUNT] = CHR(27) + 'C'
+          ELSE
+            ALINE[MCOUNT] = ' '
+          ENDIF
+        NEXT
+        MLINES = 0
+        IF MNO_SHARES > 17
+          MDIVS = 17
+        ELSE
+          MDIVS = MNO_SHARES
+        ENDIF
+        FOR MCOUNT = 1 TO MDIVS
+          IF DTOC(AINT_DT[MCOUNT] ) <> '  /  /  '
+            MLINES = MLINES + 1
+            ALINE[MLINES+4] = ALINE[MLINES+4] + ASHARE[MCOUNT] + '     ' + DTOC(AINT_DT[MCOUNT]) + '     ' + STR(AINT_DIV[MCOUNT],8,2)
+          ENDIF
+        NEXT
+        BTLINE = 0
+        MWLINE = '3048' + LTRIM(STR(599+MNO_PAGES)) + '1,a,1,1,0,86,i,d,y'
+        DO BELWRITE WITH SHRHANDLE, MWLINE
+        IF MSEC_CD < ' 50'
+          MWLINE = '$0,304860'
+        ELSE
+          MWLINE = '$0,304862'
+        ENDIF
+        DO BELWRITE WITH SHRHANDLE, MWLINE
+        IF MNO_PAGES < MTOT_PAGES
+          ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key 0 to return or 1 for next'
+          MWLINE = '$1,3048' + LTRIM(STR(600+MNO_PAGES))
+          DO BELWRITE WITH SHRHANDLE, MWLINE
+        ELSE
+          ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key 0 to return'
+        ENDIF
+        FOR MCOUNT = 1 TO 22
+          MWLINE = ALINE[MCOUNT]
+          DO BELWRITE WITH SHRHANDLE, MWLINE
+        NEXT
+        MCOUNT = 0
+        DO WHILE MNO_SHARES > 0 .AND. MCOUNT < 17
+          MCOUNT = MCOUNT + 1
+          MNO_SHARES = MNO_SHARES - 1
+          ADEL(ASHARE, 1)
+          ADEL(AFIN_DIV, 1)
+          ADEL(AFIN_DT, 1)
+          ADEL(AINT_DIV, 1)
+          ADEL(AINT_DT, 1)
+        ENDDO
+      ENDIF
+    ENDIF
+  ENDDO(SHARES IN SECTOR)
+ENDDO(SECTORS)
+
+* FORTHCOMING DIVIDENDS
+@14,20 SAY 'GENERATING CURRENT DIVIDEND PAGES'
+
+MNX_LDR = DATE()
+DO WHILE DOW(MNX_LDR) <> 6
+  MNX_LDR = MNX_LDR + 1
+ENDDO
+
+MMON_CNT = 0
+MFUT_CNT = 0
+FOR MCOUNT = 1 TO MNX_CNT
+  IF ANX_DT[MCOUNT] <= MNX_LDR
+    MMON_CNT++
+  ELSE
+    MFUT_CNT++
+  ENDIF
+NEXT
+
+* EX DIV MONDAY
+MWLINE = '30481551,a,9'
+DO BELWRITE WITH SHRHANDLE, MWLINE
+MPCOUNT = 1
+DO WHILE MMON_CNT > 0
+  AFILL(ALINE, ' ')
+  ALINE[1] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'M' + CHR(27) + 'G'
+  ALINE[1] = ALINE[1] + 'Shares Ex-div on Monday ' + DTOC(MNX_LDR+3)
+  ALINE[3] = CHR(27) + 'S' + REPLICATE('/', 39)
+  ALINE[4] = CHR(27) + 'FShare    Div type  Dividend    L.D.R.' 
+  IF MMON_CNT > 17
+    ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key _ for more or 0 to return'
+  ELSE
+    ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key 0 to return'
+  ENDIF
+  FOR MCOUNT = 5 TO 21
+    IF (INT(MCOUNT/2) * 2) = MCOUNT
+      ALINE[MCOUNT] = CHR(27) + 'C'
+    ELSE
+      ALINE[MCOUNT] = ' '
+    ENDIF
+  NEXT
+  IF MNX_CNT > 17
+    MDIVS = 17
+  ELSE
+    MDIVS = MNX_CNT
+  ENDIF
+  MINX = 1
+  MLINES = 0
+  DO WHILE MINX < MNX_CNT + 1 .AND. MLINES < MDIVS
+    IF ANX_DT[MINX] <= MNX_LDR
+      MLINES = MLINES + 1
+      ALINE[MLINES+4] = ALINE[MLINES+4] + ANX_SHR[MINX] + '    ' + ANX_TYPE[MINX] + '    ' + STR(ANX_DIV[MINX],8,2) + 'c  ' + DTOC(ANX_DT[MINX])
+      ADEL(ANX_SHR, MINX)
+      ADEL(ANX_TYPE, MINX)
+      ADEL(ANX_DIV, MINX)
+      ADEL(ANX_DT, MINX)
+      MNX_CNT = MNX_CNT - 1
+      MMON_CNT = MMON_CNT - 1
+    ELSE
+      MINX = MINX + 1
+    ENDIF
+  ENDDO
+  MWLINE = '30481551,' + CHR(96 + MPCOUNT) + ',0,1,0,86,i,d,y'
+  MPCOUNT = MPCOUNT + 1
+  DO BELWRITE WITH SHRHANDLE, MWLINE
+  MWLINE = '$0,3048155'
+  DO BELWRITE WITH SHRHANDLE, MWLINE
+  FOR MCOUNT = 1 TO 22
+    MWLINE = ALINE[MCOUNT]
+    DO BELWRITE WITH SHRHANDLE, MWLINE
+  NEXT
+ENDDO
+
+* FUTURE DIVIDENDS
+MWLINE = '30481552,a,9'
+DO BELWRITE WITH SHRHANDLE, MWLINE
+MPCOUNT = 1
+DO WHILE MNX_CNT > 0
+  AFILL(ALINE, ' ')
+  ALINE[1] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'M' + CHR(27) + 'G'
+  ALINE[1] = ALINE[1] + 'Shares with declared dividends'
+  ALINE[3] = CHR(27) + 'S' + REPLICATE('/', 39)
+  ALINE[4] = CHR(27) + 'FShare    Div type  Dividend    L.D.R.' 
+  IF MNX_CNT > 17
+    ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key _ for more or 0 to return'
+  ELSE
+    ALINE[22] = CHR(27) + 'D' + CHR(27) + ']' + CHR(27) + 'C' + 'Key 0 to return'
+  ENDIF
+  FOR MCOUNT = 5 TO 21
+    IF (INT(MCOUNT/2) * 2) = MCOUNT
+      ALINE[MCOUNT] = CHR(27) + 'C'
+    ELSE
+      ALINE[MCOUNT] = ' '
+    ENDIF
+  NEXT
+  IF MNX_CNT > 17
+    MDIVS = 17
+  ELSE
+    MDIVS = MNX_CNT
+  ENDIF
+  MINX = 1
+  MLINES = 0
+  DO WHILE MINX < MNX_CNT + 1 .AND. MLINES < MDIVS
+    MLINES = MLINES + 1
+    ALINE[MLINES+4] = ALINE[MLINES+4] + ANX_SHR[MINX] + '    ' + ANX_TYPE[MINX] + '    ' + STR(ANX_DIV[MINX],8,2) + 'c  ' + DTOC(ANX_DT[MINX])
+    MINX = MINX + 1
+  ENDDO
+  FOR MCOUNT = 1 TO MDIVS
+    MNX_CNT = MNX_CNT - 1
+    ADEL(ANX_SHR, 1)
+    ADEL(ANX_TYPE, 1)
+    ADEL(ANX_DIV, 1)
+    ADEL(ANX_DT, 1)
+  NEXT
+  MWLINE = '30481552,' + CHR(96 + MPCOUNT) + ',0,1,0,86,i,d,y'
+  MPCOUNT = MPCOUNT + 1
+  DO BELWRITE WITH SHRHANDLE, MWLINE
+  MWLINE = '$0,3048155'
+  DO BELWRITE WITH SHRHANDLE, MWLINE
+  FOR MCOUNT = 1 TO 22
+    MWLINE = ALINE[MCOUNT]
+    DO BELWRITE WITH SHRHANDLE, MWLINE
+  NEXT
+ENDDO
+
+FCLOSE(SHRHANDLE)
+
+SET ALTERNATE TO PRESET.BT
+SET ALTERNATE ON
+SET CONSOLE OFF
+?? 'DIVIDEND.BT'
+SET ALTERNATE OFF
+CLOSE ALTERNATE
+SET CONSOLE ON
+
+FM_INX++
+FILE_MSG[FM_INX] = 'Shares exdiv on Monday = ' + LTRIM(STR(MMON_CNT))
+FM_INX++
+FILE_MSG[FM_INX] = 'Shares exdiv in future = ' + LTRIM(STR(MFUT_CNT))
+
+CLOSE DATABASES
+IF NET_USE('PARAM', .F.)
+  RECLOCK('Parameter')
+  PARAM->RUN_BELDIV := 'N'
+  PRUN_BELDIV := 'N'
+  UNLOCK
+  CLOSE
+ENDIF
+
+SETCOLOR(WHITE_BLACK)
+RETURN
+ * EOF
+

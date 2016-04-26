@@ -1,0 +1,27 @@
+*SHD
+
+DATASHARE HEADER FILE FOR THURSDAY 11-07-96
+-------------------------------------------
+COPYRIGHT (C) MBM INFORMATION SYSTEMS 1987, 1988, 1989
+The material in this file and its associated share download file is copyright.
+Illegal use will incur prosecution.
+
+*NSH ALSI40 515 YNNN
+*NSI ALSI40 25 0 0 0 0 YNNN
+
+*NSH GLDI10 515 YNNN
+*NSI GLDI10 25 0 0 0 0 YNNN
+
+*NSH INDI25 515 YNNN
+*NSI INDI25 25 0 0 0 0 YNNN
+
+*NSH R150-FAR 515 YYYY
+*NSI R150-FAR 25 0 0 0 0 YYYY
+
+*NSH R150-G7 515 YYYY
+*NSI R150-G7 25 0 0 0 0 YYYY
+
+*DSH ALIANCENP 74
+
+*EHD
+(c)WENx@ersE

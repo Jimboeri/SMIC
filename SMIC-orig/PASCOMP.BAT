@@ -1,0 +1,2 @@
+rmake PASPRNT.mak
+

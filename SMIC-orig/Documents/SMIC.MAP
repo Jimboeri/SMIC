@@ -1,0 +1,305 @@
+27/04/00                        ET's program                        page 1
+ 
+                             STRUCTURE MAP FOR SMIC
+ 
+SMIC        
+ ÃÄÄÄACCMENU                                                        
+ ³    ÃÄÄÄACCBANK                                                   
+ ³    ÃÄÄÄACCCOMM                                                   
+ ³    ÃÄÄÄACCDISP                                                                                
+ ³    ³    ÃÄÄÄA12_PAY_HI                                           
+ ³    ³    ÃÄÄÄA8_ARR_UDF                                           
+ ³    ³    ÀÄÄÄA9_LOAD_AR                                           
+ ³    ³         ÃÄÄÄA1_PMT_TYP                                      
+ ³    ³         ÃÄÄÄA3_AMOUNT                                       
+ ³    ³         ÃÄÄÄA4_COMMENT                                      
+ ³    ³         ÀÄÄÄA7_C_RECNO                                      
+ ³    ÃÄÄÄACCREPBK                                                  
+ ³    ÃÄÄÄACCSTAT                                                   
+ ³    ÃÄÄÄACCSTD                                                    
+ ³    ÃÄÄÄACCUNPD                                                   
+ ³    ÃÄÄÄDEBITACC                                                  
+ ³    ÀÄÄÄVATRPT                                                    
+ ÃÄÄÄACCSUBMN                                                       
+ ³    ÃÄÄÄACCCHANG                                                  
+ ³    ³    ÃÄÄÄA10_VAL_PM                                           
+ ³    ³    ÃÄÄÄA11_VAL_PM                                           
+ ³    ³    ÃÄÄÄA12_PAY_HI                                           
+ ³    ³    ÃÄÄÄA6_D_RECNO                                           
+ ³    ³    ÃÄÄÄA7_C_RECNO                                           
+ ³    ³    ÃÄÄÄA9_LOAD_AR                                           
+ ³    ³    ³    ÃÄÄÄA1_PMT_TYP                                      
+ ³    ³    ³    ÃÄÄÄA3_AMOUNT                                       
+ ³    ³    ³    ÃÄÄÄA4_COMMENT                                      
+ ³    ³    ³    ÀÄÄÄA7_C_RECNO                                      
+ ³    ³    ÃÄÄÄGET_CHEQUE                                           
+ ³    ³    ÃÄÄÄGET_CREDIT                                           
+ ³    ³    ÀÄÄÄP8_ARR_UDF                                           
+ ³    ³         ÃÄÄÄA1_PMT_TYP                                      
+ ³    ³         ÃÄÄÄA2_PMT_DT                                       
+ ³    ³         ÃÄÄÄA4_COMMENT                                      
+ ³    ³         ÀÄÄÄA7_C_RECNO                                      
+ ³    ÃÄÄÄACCDEBIT                                                  
+ ³    ³    ÀÄÄÄDOS_WRITE                                            
+ ³    ÃÄÄÄACCDEBPR                                                  
+ ³    ÃÄÄÄACCDEPOS                                                  
+ ³    ÃÄÄÄACCREF                                                    
+ ³    ÃÄÄÄACCTODEB                                                  
+ ³    ÀÄÄÄACCUPBNK                                                  
+ ÃÄÄÄADVMENU                                                        
+ ³    ÃÄÄÄADVADD                                                                                 
+ ³    ÃÄÄÄADVCHANG                                                  
+ ³    ÃÄÄÄADVDELET                                                  
+ ³    ÃÄÄÄADVDISP                                                   
+ ³    ÃÄÄÄADVEDIT                                                                                
+ ³    ÃÄÄÄADVLIST                                                   
+ ³    ÀÄÄÄADVNCOST                                                  
+ ÃÄÄÄCRS1                                                                                        
+ ³    ÃÄÄÄMSG_DISP                                                  
+ ³    ÃÄÄÄSHRALLOC                                                  
+ ³    ÃÄÄÄSHRCHANG                                                                               
+ ³    ÃÄÄÄSHRCONS                                                                                
+ ³    ÃÄÄÄSHRDELET                                                                               
+27/04/00                        ET's program                        page 2
+ 
+                             STRUCTURE MAP FOR SMIC
+ 
+ ³    ÃÄÄÄSHREDIT                                                                                
+ ³    ÃÄÄÄSHRHOLD                                                   
+ ³    ÃÄÄÄSHRMAN                                                    
+ ³    ÃÄÄÄSHRSPLIT                                                                               
+ ³    ÃÄÄÄSHR_EXP                                                   
+ ³    ÃÄÄÄTRNNPL                                                    
+ ³    ÃÄÄÄTRNSHRAB                                                                               
+ ³    ÃÄÄÄTRNSTOP                                                                                
+ ³    ÀÄÄÄWKSHRPRN                                                                               
+ ³         ÀÄÄÄSEEK_POSN                                            
+ ÃÄÄÄCRS3                                                           
+ ³    ÃÄÄÄSTDCASH                                                                                
+ ³    ÃÄÄÄSTDCLASS                                                                               
+ ³    ÃÄÄÄSTDCOUNT                                                  
+ ³    ÃÄÄÄSTDRESET                                                  
+ ³    ÃÄÄÄSTDSTART                                                  
+ ³    ÀÄÄÄSTDWEEK                                                                                
+ ÃÄÄÄENQMENU                                                        
+ ³    ÃÄÄÄACCDISP                                                                                
+ ³    ³    ÃÄÄÄA12_PAY_HI                                           
+ ³    ³    ÃÄÄÄA8_ARR_UDF                                           
+ ³    ³    ÀÄÄÄA9_LOAD_AR                                           
+ ³    ³         ÃÄÄÄA1_PMT_TYP                                      
+ ³    ³         ÃÄÄÄA3_AMOUNT                                       
+ ³    ³         ÃÄÄÄA4_COMMENT                                      
+ ³    ³         ÀÄÄÄA7_C_RECNO                                      
+ ³    ÃÄÄÄLDDISP                                                   Lead display screen           
+ ³    ÃÄÄÄLDLOOK                                                   Lead display screen           
+ ³    ÃÄÄÄSHRLOOK                                                                                
+ ³    ÃÄÄÄSMICLAB                                                   
+ ³    ÃÄÄÄSTDLOOK                                                                                
+ ³    ÀÄÄÄTRNLOOK                                                                                
+ ³         ÀÄÄÄTRNDISP                                              
+ ³              ÀÄÄÄPRNPORT                                         
+ ÃÄÄÄETADMIN                                                        
+ ³    ÃÄÄÄDATAMENU                                                  
+ ³    ³    ÃÄÄÄFINMOVE                                              
+ ³    ³    ÃÄÄÄLDOLD                                                
+ ³    ³    ³    ÀÄÄÄFIELDNAME                                       
+ ³    ³    ÀÄÄÄTRNOLD                                               
+ ³    ÃÄÄÄFUTMENU                                                   
+ ³    ³    ÃÄÄÄFUTADD                                               
+ ³    ³    ³    ÃÄÄÄVAL_CALC_T                                      
+ ³    ³    ³    ÃÄÄÄVAL_FUT_DT                                      
+ ³    ³    ³    ÃÄÄÄVAL_FUT_NM                                      
+ ³    ³    ³    ÃÄÄÄVAL_MARGIN                                      
+ ³    ³    ³    ÀÄÄÄVAL_PERC_V                                      
+ ³    ³    ÃÄÄÄFUTDELET                                             
+ ³    ³    ÀÄÄÄFUTEDIT                                              
+ ³    ³         ÃÄÄÄVAL_CALC_T                                      
+ ³    ³         ÀÄÄÄVAL_MARGIN                                      
+ ³    ÃÄÄÄREPMENU                                                   
+ ³    ³    ÃÄÄÄREPADD                                               
+ ³    ³    ÀÄÄÄREPEDIT                                              
+ ³    ³         ÃÄÄÄVAL_REP_LE                                      
+ ³    ³         ÀÄÄÄVAL_REP_ST                                      
+ ³    ÃÄÄÄRE_INDEX                                                  
+27/04/00                        ET's program                        page 3
+ 
+                             STRUCTURE MAP FOR SMIC
+ 
+ ³    ³    ÃÄÄÄDBCREATEIN                                           
+ ³    ³    ÃÄÄÄISBIT                                                
+ ³    ³    ÀÄÄÄNNETEXTATT                                           
+ ³    ÃÄÄÄSECMENU                                                   
+ ³    ³    ÃÄÄÄSECDELET                                             
+ ³    ³    ÃÄÄÄSECDISP                                              
+ ³    ³    ÃÄÄÄSECEDIT                                              
+ ³    ³    ÀÄÄÄSECPRNT                                              
+ ³    ³         ÀÄÄÄSEC_PR_LIN                                      
+ ³    ÃÄÄÄSHR_DUP                                                   
+ ³    ÀÄÄÄSYSPARAM                                                  
+ ³         ÃÄÄÄPRM_DO_EDI                                           
+ ³         ÀÄÄÄPR_CH                                                
+ ÃÄÄÄLDMENU                                                         
+ ³    ÃÄÄÄLDADD                                                    Lead entry program            
+ ³    ³    ÃÄÄÄLDAD_V04                                             
+ ³    ³    ÃÄÄÄLDAD_V06                                             
+ ³    ³    ÃÄÄÄLDAD_V07                                             
+ ³    ³    ÃÄÄÄLDAD_V08                                             
+ ³    ³    ÃÄÄÄLDAD_V09                                             
+ ³    ³    ÃÄÄÄPRE_SRC_CD                                           
+ ³    ³    ³    ÀÄÄÄLD_KILL_EN                                      
+ ³    ³    ÃÄÄÄPRE_SRC_DT                                           
+ ³    ³    ÃÄÄÄVAL_ARC_NO                                           
+ ³    ³    ÃÄÄÄVAL_LD_DT_                                           
+ ³    ³    ÃÄÄÄVAL_LD_P_C                                           
+ ³    ³    ÃÄÄÄVAL_LD_RAC                                           
+ ³    ³    ÃÄÄÄVAL_LD_SEL                                           
+ ³    ³    ÃÄÄÄVAL_LD_SEX                                           
+ ³    ³    ÃÄÄÄVAL_LD_SRC                                           
+ ³    ³    ÀÄÄÄVAL_LD_SUR                                           
+ ³    ÃÄÄÄLDDISP                                                   Lead display screen           
+ ³    ÃÄÄÄLDEDIT                                                                                 
+ ³    ³    ÃÄÄÄLDEDITA                                              
+ ³    ³    ³    ÃÄÄÄLDAD_V09                                        
+ ³    ³    ³    ÃÄÄÄLDAD_V10                                        
+ ³    ³    ³    ÀÄÄÄLDAD_V11                                        
+ ³    ³    ÀÄÄÄLDEDITB                                              
+ ³    ³         ÃÄÄÄLDAD_V04                                        
+ ³    ³         ÃÄÄÄLDAD_V06                                        
+ ³    ³         ÃÄÄÄLDAD_V07                                        
+ ³    ³         ÃÄÄÄPRE_SRC_CD                                      
+ ³    ³         ³    ÀÄÄÄLD_KILL_EN                                 
+ ³    ³         ÃÄÄÄPRE_SRC_DT                                      
+ ³    ³         ÃÄÄÄVAL_LD_DT_                                      
+ ³    ³         ÃÄÄÄVAL_LD_P_C                                      
+ ³    ³         ÃÄÄÄVAL_LD_RAC                                      
+ ³    ³         ÃÄÄÄVAL_LD_SEL                                      
+ ³    ³         ÃÄÄÄVAL_LD_SEX                                      
+ ³    ³         ÀÄÄÄVAL_LD_SRC                                      
+ ³    ÃÄÄÄLDREMOVE                                                  
+ ³    ÀÄÄÄLDREP                                                     
+ ³         ÃÄÄÄLDAD_V06                                             
+ ³         ÃÄÄÄLDAD_V07                                             
+ ³         ÀÄÄÄLDAD_V09                                             
+ ÃÄÄÄMEDMENU                                                        
+ ³    ÃÄÄÄMEDANAL                                                   
+27/04/00                        ET's program                        page 4
+ 
+                             STRUCTURE MAP FOR SMIC
+ 
+ ³    ÃÄÄÄMEDAREAS                                                  
+ ³    ³    ÃÄÄÄMED_1_COUN                                           
+ ³    ³    ÀÄÄÄMED_2_PRIN                                           
+ ³    ÃÄÄÄMEDLAB                                                    
+ ³    ³    ÀÄÄÄLABELLINE                                            
+ ³    ÃÄÄÄMEDRDIG                                                   
+ ³    ³    ÃÄÄÄPR_LINE1                                             
+ ³    ³    ÃÄÄÄPR_LINE2                                             
+ ³    ³    ÃÄÄÄPR_LINE3                                             
+ ³    ³    ÃÄÄÄPSTAT1                                               
+ ³    ³    ³    ÀÄÄÄSTAT_ADD                                        
+ ³    ³    ÀÄÄÄPSTAT2                                               
+ ³    ÃÄÄÄMEDSALES                                                  
+ ³    ÃÄÄÄMEDSTAT                                                   
+ ³    ³    ÀÄÄÄMEDPROC1                                             
+ ³    ÀÄÄÄMEDSTAT1                                                  
+ ³         ÀÄÄÄMEDPROC1                                             
+ ÃÄÄÄNOTES                                                          
+ ÃÄÄÄPRNTMENU                                                       
+ ³    ÃÄÄÄLDLAB                                                     
+ ³    ÃÄÄÄLDPRLAB                                                   
+ ³    ÃÄÄÄPFOLLDT                                                   
+ ³    ÃÄÄÄREPRATIO                                                  
+ ³    ³    ÀÄÄÄRATIODISP                                            
+ ³    ÃÄÄÄREPSTAT                                                   
+ ³    ³    ÀÄÄÄPRT_LINE                                             
+ ³    ÃÄÄÄRLEADS                                                    
+ ³    ³    ÀÄÄÄRLEADSBR                                             
+ ³    ÀÄÄÄRSALES                                                    
+ ÃÄÄÄSTDMENU                                                        
+ ³    ÃÄÄÄSTDADD                                                    
+ ³    ³    ÃÄÄÄCHEQUE_OTH                                           
+ ³    ³    ³    ÀÄÄÄGET_CHEQUE                                      
+ ³    ³    ÃÄÄÄDEBIT_ORDE                                           
+ ³    ³    ÃÄÄÄGET_CREDIT                                           
+ ³    ³    ÃÄÄÄSTD_V01                                              
+ ³    ³    ÃÄÄÄSTD_V02                                              
+ ³    ³    ÃÄÄÄSTD_V03                                              
+ ³    ³    ÃÄÄÄSTD_V04                                              
+ ³    ³    ÃÄÄÄSTD_V05                                              
+ ³    ³    ÀÄÄÄSTD_V06                                              
+ ³    ÃÄÄÄSTDCOMNT                                                  
+ ³    ÃÄÄÄSTDEDIT                                                   
+ ³    ³    ÃÄÄÄSTD_V01                                              
+ ³    ³    ÃÄÄÄSTD_V02                                              
+ ³    ³    ÃÄÄÄSTD_V03                                              
+ ³    ³    ÃÄÄÄSTD_V04                                              
+ ³    ³    ÃÄÄÄSTD_V05                                              
+ ³    ³    ÀÄÄÄSTD_V06                                              
+ ³    ÃÄÄÄSTDEXPL                                                   
+ ³    ÃÄÄÄSTDREINS                                                  
+ ³    ÃÄÄÄSTDSUSP                                                   
+ ³    ÀÄÄÄSTDUNPD                                                   
+ ÃÄÄÄSTDPMENU                                                       
+ ³    ÃÄÄÄMERGE                                                     
+ ³    ³    ÀÄÄÄMERGE_STD                                            
+ ³    ÃÄÄÄSTDACTIV                                                  
+27/04/00                        ET's program                        page 5
+ 
+                             STRUCTURE MAP FOR SMIC
+ 
+ ³    ÃÄÄÄSTDAREAL                                                  
+ ³    ³    ÃÄÄÄLOAD_ARR                                             
+ ³    ³    ÀÄÄÄPRN_LAB                                              
+ ³    ÃÄÄÄSTDFIN                                                    
+ ³    ÃÄÄÄSTDLIST                                                   
+ ³    ÀÄÄÄSTDUNACT                                                  
+ ÃÄÄÄTWIN                                                           
+ ³    ÃÄÄÄBACKDISP                                                  
+ ³    ÃÄÄÄFUTUREMN                                                  
+ ³    ³    ÃÄÄÄFUTDISP                                              
+ ³    ³    ÃÄÄÄFUTLONG                                              
+ ³    ³    ÀÄÄÄFUTSHORT                                             
+ ³    ÃÄÄÄOTHTRNMN                                                  
+ ³    ³    ÃÄÄÄBEARBUY                                              
+ ³    ³    ÃÄÄÄBEARSL                                               
+ ³    ³    ÃÄÄÄORDEDIT                                              
+ ³    ³    ÃÄÄÄPREBUY                                               
+ ³    ³    ÃÄÄÄPRESELL                                              
+ ³    ³    ÃÄÄÄTRNEDIT                                              
+ ³    ³    ÀÄÄÄTRNNPLEX                                             
+ ³    ÃÄÄÄSHRMENU                                                   
+ ³    ³    ÃÄÄÄPRCEXTR                                              
+ ³    ³    ³    ÃÄÄÄIND_PROG                                        
+ ³    ³    ³    ÃÄÄÄNNETEXTATT                                      
+ ³    ³    ³    ÀÄÄÄSHR_DATE                                        
+ ³    ³    ÃÄÄÄSHRDIV                                               
+ ³    ³    ³    ÃÄÄÄDIV_VAL_DT                                      
+ ³    ³    ³    ÀÄÄÄDIV_VAL_TY                                      
+ ³    ³    ÀÄÄÄSHRLOOK                                                                           
+ ³    ÃÄÄÄSTDMENU2                                                  
+ ³    ³    ÃÄÄÄACCDISP1                                             
+ ³    ³    ³    ÃÄÄÄA8_ARR_UDF                                      
+ ³    ³    ³    ÀÄÄÄA9_LOAD_AR                                      
+ ³    ³    ³         ÃÄÄÄA1_PMT_TYP                                 
+ ³    ³    ³         ÃÄÄÄA3_AMOUNT                                  
+ ³    ³    ³         ÃÄÄÄA4_COMMENT                                 
+ ³    ³    ³         ÀÄÄÄA7_C_RECNO                                 
+ ³    ³    ÃÄÄÄSTDCOMN1                                             
+ ³    ³    ÃÄÄÄSTDEDIT1                                             
+ ³    ³    ÃÄÄÄSTDLECT                                              
+ ³    ³    ³    ÀÄÄÄVAL_STDLEC                                      
+ ³    ³    ÃÄÄÄSTDREIN1                                             
+ ³    ³    ³    ÀÄÄÄSTD_PORT_V                                      
+ ³    ³    ÀÄÄÄSTDSUSP1                                             
+ ³    ÃÄÄÄTRNBUY                                                    
+ ³    ³    ÀÄÄÄBUY_ORDER                                            
+ ³    ÃÄÄÄTRNDISP                                                   
+ ³    ³    ÀÄÄÄPRNPORT                                              
+ ³    ÃÄÄÄTRNPAS                                                    
+ ³    ÃÄÄÄTRNSELL                                                   
+ ³    ³    ÀÄÄÄSELL_ORDER                                           
+ ³    ÀÄÄÄTWNDISP                                                   
+ ÀÄÄÄUPGRADE                                                        
+
+
+                   ---   27/04/00   ---
